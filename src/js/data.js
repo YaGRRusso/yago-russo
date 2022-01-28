@@ -110,6 +110,7 @@ let skills = {
     {name: 'Bootstrap', level: 3},
     {name: 'Tailwind', level: 2},
     {name: 'SASS', level: 1},
+
     {name: 'Styled Components', level: 1},
     {name: 'React', level: 2},
     {name: 'Next', level: 2},
@@ -133,6 +134,7 @@ let skills = {
     {name: 'Ética', description: 'lorem ipsum'},
     {name: 'Flexibilidade', description: 'lorem ipsum'},
     {name: 'Autodidata', description: 'lorem ipsum'},
+    
     {name: 'Comunicação', description: 'lorem ipsum'},
     {name: 'Organização', description: 'lorem ipsum'},
     {name: 'Proatividade', description: 'lorem ipsum'},
