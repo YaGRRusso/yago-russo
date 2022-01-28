@@ -11,6 +11,8 @@ function currentAge(birth){
 }
 
 let personal = {
+  name: 'Yago Russo',
+  birth: '2001-11-30 12:00',
   age:  currentAge('2001-11-30 12:00'),
   email: 'yagrrusso@gmail.com',
   phone: '51986824203',
@@ -32,7 +34,8 @@ let personal = {
     number: 543
   },
   interest: 'Desenvolvedor',
-  cnh: 'B'
+  cnh: 'B',
+  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus facilis voluptatibus sunt quidem ipsum. Facere excepturi quam et earum repudiandae. Laboriosam accusamus fugit itaque earum provident quidem eos vel. Consectetur.'
 }
 
 let experiencies = [
@@ -68,6 +71,88 @@ let formations = [
   }
 ]
 
+let courses = [
+  {
+    name: 'Next',
+    institute: 'Udemy',
+    hours: 27,
+    description: 'React | Next | Typescript | Firebase | TailwindCSS',
+    link: 'https://google.com'
+  },
+  {
+    name: 'Next',
+    institute: 'Udemy',
+    hours: 27,
+    description: 'React | Next | Typescript | Firebase | TailwindCSS',
+    link: 'https://google.com'
+  },
+  {
+    name: 'Next',
+    institute: 'Udemy',
+    hours: 27,
+    description: 'React | Next | Typescript | Firebase | TailwindCSS',
+    link: 'https://google.com'
+  },
+]
+
+let languages = {
+  portuguese: 'Fluente',
+  english: 'Intermediário'
+}
+
+let skills = {
+  hard: [
+    {name: 'HTML5', level: 3},
+    {name: 'CSS3', level: 3},
+    {name: 'JavaScript', level: 3},
+    {name: 'TypeScript', level: 1},
+    {name: 'PHP', level: 2},
+    {name: 'Bootstrap', level: 3},
+    {name: 'Tailwind', level: 2},
+    {name: 'SASS', level: 1},
+    {name: 'Styled Components', level: 1},
+    {name: 'React', level: 2},
+    {name: 'Next', level: 2},
+    {name: 'Redux', level: 2},
+    {name: 'Git', level: 3},
+    {name: 'Node', level: 1},
+    {name: 'Express', level: 1},
+    {name: 'NPM', level: 3},
+    {name: 'Yarn', level: 3},
+    {name: 'Postman', level: 1},
+    {name: 'MySQL', level: 3},
+    {name: 'PostgreSQL', level: 3},
+    {name: 'Firebase', level: 2},
+    {name: 'Photoshop', level: 3},
+    {name: 'Illustrator', level: 2},
+    {name: 'Premiere', level: 2},
+    {name: 'Apache', level: 3},
+  ],
+  soft: [
+    {name: 'Trabalho em Equipe', description: 'lorem ipsum'},
+    {name: 'Ética', description: 'lorem ipsum'},
+    {name: 'Flexibilidade', description: 'lorem ipsum'},
+    {name: 'Autodidata', description: 'lorem ipsum'},
+    {name: 'Comunicação', description: 'lorem ipsum'},
+    {name: 'Organização', description: 'lorem ipsum'},
+    {name: 'Proatividade', description: 'lorem ipsum'},
+    {name: 'Empatia', description: 'lorem ipsum'},
+  ]
+}
+
+let social = {
+    github: 'https://github.com/YaGRRusso',
+    linkedin: 'https://linkedin.com/in/yago-russo',
+    site: 'https://yagorussocabral.netlify.app',
+    curriculum: 'https://bit.ly/yagocurriculo',
+    gmail: 'mailto:yagrrusso@gmail.com',
+    whatsapp: 'https://api.whatsapp.com/send/?phone=5551986824203&text=Ol%C3%A1,+Yago,+tudo+bem?&app_absent=0'
+}
+
 console.log(personal)
 console.log(experiencies)
 console.log(formations)
+console.log(courses)
+console.log(languages)
+console.log(skills)
+console.log(social)
