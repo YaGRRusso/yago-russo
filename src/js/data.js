@@ -104,18 +104,19 @@ let skills = {
   hard: [
     {name: 'HTML5', level: 3},
     {name: 'CSS3', level: 3},
-    {name: 'JavaScript', level: 3},
-    {name: 'TypeScript', level: 1},
-    {name: 'PHP', level: 2},
     {name: 'Bootstrap', level: 3},
     {name: 'Tailwind', level: 2},
-    {name: 'SASS', level: 1},
-
+    {name: 'JavaScript', level: 3},
+    {name: 'TypeScript', level: 1},
+    {name: 'Git', level: 3},
+    {name: 'Photoshop', level: 3},
+    //Separador 8 Itens//
     {name: 'Styled Components', level: 1},
+    {name: 'SASS', level: 1},
+    {name: 'PHP', level: 2},
     {name: 'React', level: 2},
     {name: 'Next', level: 2},
     {name: 'Redux', level: 2},
-    {name: 'Git', level: 3},
     {name: 'Node', level: 1},
     {name: 'Express', level: 1},
     {name: 'NPM', level: 3},
@@ -124,17 +125,16 @@ let skills = {
     {name: 'MySQL', level: 3},
     {name: 'PostgreSQL', level: 3},
     {name: 'Firebase', level: 2},
-    {name: 'Photoshop', level: 3},
     {name: 'Illustrator', level: 2},
     {name: 'Premiere', level: 2},
-    {name: 'Apache', level: 3},
+    {name: 'Apache', level: 2},
   ],
   soft: [
     {name: 'Trabalho em Equipe', description: 'lorem ipsum'},
     {name: 'Ética', description: 'lorem ipsum'},
     {name: 'Flexibilidade', description: 'lorem ipsum'},
     {name: 'Autodidata', description: 'lorem ipsum'},
-    
+    //Separador 4 Itens//
     {name: 'Comunicação', description: 'lorem ipsum'},
     {name: 'Organização', description: 'lorem ipsum'},
     {name: 'Proatividade', description: 'lorem ipsum'},
@@ -151,10 +151,10 @@ let social = {
     whatsapp: 'https://api.whatsapp.com/send/?phone=5551986824203&text=Ol%C3%A1,+Yago,+tudo+bem?&app_absent=0'
 }
 
-console.log(personal)
-console.log(experiencies)
-console.log(formations)
-console.log(courses)
-console.log(languages)
-console.log(skills)
-console.log(social)
+console.log('Personal: ', personal)
+console.log('Experiencies: ', experiencies)
+console.log('Formations: ', formations)
+console.log('Courses: ', courses)
+console.log('Languages: ', languages)
+console.log('Skills: ', skills)
+console.log('Social: ', social)

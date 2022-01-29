@@ -12,8 +12,5 @@ function createExp(){
       </div>
     `
   })
-  
   document.querySelector('.experiencies').innerHTML = experience
 }
-
-createExp()
