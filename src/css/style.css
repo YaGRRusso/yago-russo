@@ -1,114 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url(./mobile.css);
+@import url(./geral.css);
+
 :root {
   --maxContainer: 1140px;
   --container: 85%;
 
-  --background: #111;
-  --primary: #070;
-  --secondary: #ddd;
+  --background1: #181818;
+  --background2: #212121;
+
+  --primary: #CECE05;
+  --emphasis: #ffffff;
+  --default: #dddddd;
+  --sub: #aaaaaa;
+  --dark: #555;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-header {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background);
-  color: var(--secondary);
-}
-
-.header {
-  max-width: var(--maxContainer);
-  width: var(--container);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-logo {
-  font-size: 20px;
-}
-
-.header-logo span {
-  color: var(--primary);
-  font-weight: bold;
-}
-
-.menu-opener {
-  display: none;
-}
-
-.menu-opener--hamb,
-.menu-opener--hamb::before,
-.menu-opener--hamb::after {
-  height: 4px;
-  width: 32px;
-  background-color: var(--primary);
-  border-radius: 5px;
-  transition: all .5s ease-in-out;
-}
-
-.menu-opener--hamb::before,
-.menu-opener--hamb::after {
-  content: "";
-  position: absolute;
-}
-
-.menu-opener--hamb::before {
-  transform: translateY(-10px);
-}
-
-.menu-opener--hamb::after {
-  transform: translateY(10px);
-}
-
-.menu-opener.open .menu-opener--hamb {
-  transform: translateX(-50px);
-  background: transparent;
-}
-
-.menu-opener.open .menu-opener--hamb::before {
-  transform: rotate(45deg) translate(35px, -35px)
-}
-
-.menu-opener.open .menu-opener--hamb::after {
-  transform: rotate(-45deg) translate(35px, 35px)
-}
-
-
-.header-menu ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.header-menu li a {
-  text-transform: uppercase;
+html {
   font-size: 14px;
-  margin: 0 7px;
-  color: var(--secondary);
 }
-
-.header-menu li a.active {
-  color: var(--primary);
-  font-weight: bold;
-}
-
-
 
 
 @media (max-width: 780px) {
