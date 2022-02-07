@@ -5,13 +5,15 @@
   --maxContainer: 1140px;
   --container: 90%;
 
-  --header: #111111;
-  --background1: #232324;
-  --background2: #171717;
+  --header: #0d0d14;
+  --background1: #1a2029;
+  --background2: #131820;
+  --background3: #11161d;
   --backgroundImg: url(../img/backgroundBlue.png);
 
   --primary: #3BADCB;
-  --secondary: #ee635225;
+  --secondary: #3BADCB25;
+  --tertiary: #154652;
   --emphasis: #ffffff;
   --default: #dddddd;
   --sub: #aaaaaa;
@@ -153,7 +155,9 @@ header {
   display: none;
   height: 3px;
   width: 80%;
-  background-color: var(--primary);
+  background: linear-gradient(90deg, #3BADCB, #954aea 25%, #4b8aff 50%, #01feff 100%);
+  background-size: 300% 100%;
+  animation: bgMove 5s linear infinite;
 }
 
 .intro {
@@ -253,6 +257,7 @@ header {
   padding: 30px;
   cursor: pointer;
   transition: all .25s;
+  border-radius: 5px;
 }
 
 .about-box.selected {
@@ -296,59 +301,180 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-left: 30px;
 }
 
 .about-title {
   color: var(--default);
   font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.about-desc {
-  color: var(--sub);
-}
-
-.about-desc::before {
-  content: '';
-  position: absolute;
-  height: 100px;
-  width: 2px;
-  color: var(--primary);
-}
-
-.about-desc h3 {
-  margin-bottom: -0.9rem;
-  font-weight: 300;
-  font-size: .95rem;
-}
-
-.about-desc span {
-  float: right;
-}
-
-.about-desc h2 {
-  color: var(--default);
-}
-
-.about-info {
-  margin-top: 30px;
-  float: inline-end;
-}
-
-.about-info p {
-  color: var(--default);
-  margin: 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.about-info p img {
-  margin-right: 10px;
+  margin-bottom: 2rem;
 }
 
 .about-type {
   color: var(--primary);
   font-weight: bold;
+}
+
+.about-desc {
+  color: var(--sub);
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.about span.blink {
+  animation: blink 2s infinite;
+  color: var(--primary);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.about-desc .infos {
+  display: none;
+}
+
+.about-desc .skills {
+  display: contents;
+}
+
+.about-desc .skills ul {
+  padding: 0;
+  width: 100%;
+}
+
+.about-desc .skills li {
+  margin-bottom: 2rem;
+}
+
+.about-desc .skills li:last-child {
+  margin-bottom: 0;
+}
+
+.about-desc .skills li h2 {
+  padding: 0;
+  margin: .5rem 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.about-desc .skills li .progressBar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+.about-desc .skills li .progressBar .progress {
+  height: 3px;
+  background: linear-gradient(90deg, #3BADCB, #4a6fea 25%, #4b8aff 50%, #01feff 100%);
+  background-size: 300% 100%;
+  display: flex;
+  justify-content: end;
+  transition: all 1.5s linear;
+  animation: bgMove 5s linear infinite;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 100%
+  }
+
+  50% {
+    background-position: 0
+  }
+
+  100% {
+    background-position: 100%
+  }
+}
+
+.about-desc .skills li .progressBar .progress span {
+  display: block;
+  position: relative;
+  background-color: var(--secondary);
+  top: -30px;
+  padding: 0 8px;
+  height: 1.5rem;
+  border-radius: 8px;
+  color: var(--default);
+  font-weight: bold;
+  font-size: .8rem;
+  padding-top: 3px;
+}
+
+.about-desc .skills li .progressBar .progress span::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid transparent;
+  border-top: .5rem solid var(--secondary);
+}
+
+.about-desc-item {
+  margin: 10px 0;
+  width: 180px;
+}
+
+.about-desc-item p {
+  font-weight: bold;
+  margin-bottom: .2rem;
+  display: flex;
+  align-items: center;
+  /* width: 20%;
+  border-bottom: 1px solid var(--secondary); */
+}
+
+.about-desc-item p img {
+  width: 1.2rem;
+  margin-right: .2rem;
+  display: inline;
+}
+
+.about-desc-item span {
+  margin: 0;
+}
+
+.stacks {
+  background-color: var(--background3);
+  border-top: 1px solid var(--background1);
+}
+
+.stacks img {
+  width: 120px
+}
+
+.marquee {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tertiary);
 }
 
 

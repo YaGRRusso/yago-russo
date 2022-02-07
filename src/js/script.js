@@ -15,6 +15,7 @@ function scrollPercent(){
     percent.style.display = 'none';
   }
   percent.style.width = `${windowPercent}%`;
+  scrollStack();
 }
 
 document.querySelectorAll('.about-box').forEach(item => {
@@ -31,31 +32,93 @@ function aboutBoxSelect(i){
 function aboutWrite(info){
   let type = '';
   let title = '';
-  let desc = '';
+  let list = '';
 
   if (info == 'about') {
     type = 'Introdução';
     title = 'Um pouco sobre mim.';
-    desc = `Tudo bem?<br>Me chamo ${personal.name}, tenho ${personal.age} anos e sou apaixonado por informática desde criança, quando ganhei meu primeiro computador.<br>Aprendi muitas coisas sozinho como design, programação e hardware, sempre amei essa área e hoje sigo aprendendo cada vez mais.<br><br>
-    Aos 17 anos, com tudo o que eu havia aprendido sozinho, dei aulas de informática e design em uma escola reconhecida nacionalmente, o Instituto Mix de Profissões. Aos 19, me formei como técnico em informática pelo instituo federal.`;
+    
+    document.querySelector('.about-desc .about').style.display = 'inline';
+    document.querySelector('.about-desc .infos').style.display = 'none';
+    document.querySelector('.about-desc .skills').style.display = 'none';
   }
-  if (info == 'formation'){
-    type = 'Formação';
-    title = 'Minha escolaridade.';
-    desc = 'cu';
+  if (info == 'information'){
+    type = 'Informações';
+    title = 'Tudo sobre mim.';
+
+    document.querySelector('[data-item="name"]').innerHTML = personal.name;
+    document.querySelector('[data-item="year"]').innerHTML = `${personal.age} anos`
+    document.querySelector('[data-item="email"]').innerHTML = personal.email;
+    document.querySelector('[data-item="phone"]').innerHTML = personal.phone;
+    document.querySelector('[data-item="target"]').innerHTML = personal.interest;
+    document.querySelector('[data-item="address"]').innerHTML = `${personal.address.city.long}, ${personal.address.country.short}`;
+    
+    document.querySelector('.about-desc .about').style.display = 'none';
+    document.querySelector('.about-desc .infos').style.display = 'contents';
+    document.querySelector('.about-desc .skills').style.display = 'none';
   }
-  if (info == 'experience'){
-    type = 'Experiência';
-    title = 'Minha experiência profissional.';
-    desc = 'cu';
+  if (info == 'skills'){
+    type = 'Habilidades';
+    title = 'O que sei.';
+    
+    skills.stacks.forEach(item => {
+      list += `
+      <li>
+        <h2>${item.name}</h2>
+        <div class="progressBar">
+          <div class="progress" style="width: 10%"><span>${item.level}%</span></div>
+        </div>
+      </li>`
+    })
+
+    document.querySelector('.skills ul').innerHTML = list;
+    document.querySelector('.about-desc .about').style.display = 'none';
+    document.querySelector('.about-desc .infos').style.display = 'none';
+    document.querySelector('.about-desc .skills').style.display = 'contents';
+    animeBar();
   }
 
   document.querySelector('.about-type').innerHTML = type;
   document.querySelector('.about-title').innerHTML = title;
-  document.querySelector('.about-desc').innerHTML = desc;
 }
 
-// aboutWrite('about')
+let txtPos = 0
+function typeWriter() {
+  let msg = [`
+
+  Tudo bem?<br><br>Me chamo ${personal.name}, tenho ${personal.age} anos e sou apaixonado por informática desde criança, quando ganhei meu primeiro computador.<br>Aprendi muitas coisas sozinho como: design, programação, hardware e até mesmo inglês, sempre amei essa área e ainda sigo aprendendo cada vez mais.<br><br>
+  Aos 17 anos, com tudo o que eu havia aprendido sozinho, dei aulas de informática e design em uma escola reconhecida nacionalmente, o Instituto Mix de Profissões.<br>Aos 19, me formei como técnico em informática pelo instituto federal e hoje sigo no mesmo caminho.
+
+  `];
+  document.querySelector('.about-desc .about').innerHTML = msg[0].substring(0, txtPos)+'<span class="blink">▮</span>';
+  
+  txtPos++
+  if (txtPos !== msg[0].length){
+    setTimeout(typeWriter, 25);
+  }
+}
+
+typeWriter()
+
+function animeBar(){
+  setTimeout(()=>{
+    document.querySelectorAll('.progressBar .progress').forEach(bar => {
+      let percent = bar.querySelector('span').innerHTML;
+      bar.style.width = percent;
+    })
+  },10);
+}
+
+aboutWrite('about')
+
+function scrollStack(){
+  let windowHeight = document.body.offsetHeight - window.innerHeight;
+  domRect = document.querySelector('.marquee').getBoundingClientRect();
+  let res = parseInt(domRect.y-windowHeight)
+  if (res <= 50){
+    alert('o')
+  }
+}
 
 // MOBILE
 const menuOpener = document.querySelector('.menu-opener')

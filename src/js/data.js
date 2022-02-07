@@ -37,7 +37,7 @@ let personal = {
     street: 'Edu Chaves',
     number: 543
   },
-  interest: 'Desenvolvedor',
+  interest: 'Web Developer',
   cnh: 'B'
 }
 
@@ -113,7 +113,6 @@ let skills = {
     {name: 'TypeScript', level: 1},
     {name: 'Git', level: 3},
     {name: 'Photoshop', level: 3},
-    //Separador 8 Itens//
     {name: 'Styled Components', level: 1},
     {name: 'SASS', level: 1},
     {name: 'PHP', level: 2},
@@ -133,15 +132,21 @@ let skills = {
     {name: 'Apache', level: 2},
   ],
   soft: [
-    {name: 'Trabalho em Equipe', description: 'lorem ipsum'},
-    {name: 'Ética', description: 'lorem ipsum'},
-    {name: 'Flexibilidade', description: 'lorem ipsum'},
-    {name: 'Autodidata', description: 'lorem ipsum'},
-    //Separador 4 Itens//
-    {name: 'Comunicação', description: 'lorem ipsum'},
-    {name: 'Organização', description: 'lorem ipsum'},
-    {name: 'Proatividade', description: 'lorem ipsum'},
-    {name: 'Empatia', description: 'lorem ipsum'},
+    {name: 'Trabalho em Equipe'},
+    {name: 'Ética'},
+    {name: 'Flexibilidade'},
+    {name: 'Autodidata'},
+    {name: 'Comunicação'},
+    {name: 'Organização'},
+    {name: 'Proatividade'},
+    {name: 'Empatia'},
+  ],
+  stacks: [
+    {name: 'full-stack', level: 85},
+    {name: 'back-end', level: 65},
+    {name: 'front-end', level: 95},
+    {name: 'mobile', level: 65},
+    {name: 'design', level: 95},
   ]
 }
 
