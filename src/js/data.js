@@ -26,6 +26,10 @@ let personal = {
       long: 'Rio Grande do Sul',
       short: 'RS'
     },
+    city: {
+      long: 'Gravataí',
+      short: 'GTI'
+    },
     neighborhood: {
       long: 'Morada do Vale 2',
       short: 'MV2'
@@ -34,8 +38,7 @@ let personal = {
     number: 543
   },
   interest: 'Desenvolvedor',
-  cnh: 'B',
-  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus facilis voluptatibus sunt quidem ipsum. Facere excepturi quam et earum repudiandae. Laboriosam accusamus fugit itaque earum provident quidem eos vel. Consectetur.'
+  cnh: 'B'
 }
 
 let experiencies = [
