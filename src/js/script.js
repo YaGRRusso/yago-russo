@@ -1,13 +1,18 @@
+// Variáveis Gerais
 const header = document.querySelector('header');
 const percent = document.querySelector('.percent')
+let txtPos = 0; //Typewriter
+
+
+// Header
 window.addEventListener('scroll', scrollPercent)
 
-function scrollPercent(){
+function scrollPercent() {
   let windowPos = window.scrollY;
   let windowHeight = document.body.offsetHeight - window.innerHeight;
-  let windowPercent = parseInt((100 * windowPos)/windowHeight);
+  let windowPercent = parseInt((100 * windowPos) / windowHeight);
 
-  if (windowPos >= 100){
+  if (windowPos >= 100) {
     header.classList.add('fix');
     percent.style.display = 'block';
   } else {
@@ -15,21 +20,22 @@ function scrollPercent(){
     percent.style.display = 'none';
   }
   percent.style.width = `${windowPercent}%`;
-  scrollStack();
 }
 
+
+// Section SOBRE
 document.querySelectorAll('.about-box').forEach(item => {
-  item.addEventListener('click', ()=>aboutBoxSelect(item));
+  item.addEventListener('click', () => aboutBoxSelect(item));
 })
 
-function aboutBoxSelect(i){
+function aboutBoxSelect(i) {
   document.querySelector('.selected').classList.remove('selected');
   i.classList.add('selected');
   let info = i.getAttribute('data-info');
   aboutWrite(info);
 }
 
-function aboutWrite(info){
+function aboutWrite(info) {
   let type = '';
   let title = '';
   let list = '';
@@ -37,12 +43,12 @@ function aboutWrite(info){
   if (info == 'about') {
     type = 'Introdução';
     title = 'Um pouco sobre mim.';
-    
+
     document.querySelector('.about-desc .about').style.display = 'inline';
     document.querySelector('.about-desc .infos').style.display = 'none';
     document.querySelector('.about-desc .skills').style.display = 'none';
   }
-  if (info == 'information'){
+  if (info == 'information') {
     type = 'Informações';
     title = 'Tudo sobre mim.';
 
@@ -52,15 +58,15 @@ function aboutWrite(info){
     document.querySelector('[data-item="phone"]').innerHTML = personal.phone;
     document.querySelector('[data-item="target"]').innerHTML = personal.interest;
     document.querySelector('[data-item="address"]').innerHTML = `${personal.address.city.long}, ${personal.address.country.short}`;
-    
+
     document.querySelector('.about-desc .about').style.display = 'none';
     document.querySelector('.about-desc .infos').style.display = 'contents';
     document.querySelector('.about-desc .skills').style.display = 'none';
   }
-  if (info == 'skills'){
+  if (info == 'skills') {
     type = 'Habilidades';
     title = 'O que sei.';
-    
+
     skills.stacks.forEach(item => {
       list += `
       <li>
@@ -82,7 +88,6 @@ function aboutWrite(info){
   document.querySelector('.about-title').innerHTML = title;
 }
 
-let txtPos = 0
 function typeWriter() {
   let msg = [`
 
@@ -90,42 +95,53 @@ function typeWriter() {
   Aos 17 anos, com tudo o que eu havia aprendido sozinho, dei aulas de informática e design em uma escola reconhecida nacionalmente, o Instituto Mix de Profissões.<br>Aos 19, me formei como técnico em informática pelo instituto federal e hoje sigo no mesmo caminho.
 
   `];
-  document.querySelector('.about-desc .about').innerHTML = msg[0].substring(0, txtPos)+'<span class="blink">▮</span>';
-  
+  document.querySelector('.about-desc .about').innerHTML = msg[0].substring(0, txtPos) + '<span class="blink">▮</span>';
+
   txtPos++
-  if (txtPos !== msg[0].length){
+  if (txtPos !== msg[0].length) {
     setTimeout(typeWriter, 25);
   }
 }
 
-typeWriter()
 
-function animeBar(){
-  setTimeout(()=>{
+function animeBar() {
+  setTimeout(() => {
     document.querySelectorAll('.progressBar .progress').forEach(bar => {
       let percent = bar.querySelector('span').innerHTML;
       bar.style.width = percent;
     })
-  },10);
+  }, 10);
 }
 
-aboutWrite('about')
 
-function scrollStack(){
-  let windowHeight = document.body.offsetHeight - window.innerHeight;
-  domRect = document.querySelector('.marquee').getBoundingClientRect();
-  let res = parseInt(domRect.y-windowHeight)
-  if (res <= 50){
-    alert('o')
+// Section STACKS
+function stackWrite() {
+  let stacksImg = '';
+  for (let i = 0; i < skills.hard.length; i++) {
+    stacksImg += `
+    
+    <div class="stack">
+      ${skills.hard[i].svg}
+      ${skills.hard[i].name}
+    </div>
+
+    `;
   }
+  document.querySelector('.stacks .section-body').innerHTML = stacksImg;
 }
+
+
+// Funções INICIO
+aboutWrite('about');
+typeWriter();
+stackWrite();
 
 // MOBILE
 const menuOpener = document.querySelector('.menu-opener')
 let menuOpen = false
 
-menuOpener.addEventListener('click', ()=>{
-  if (!menuOpen){
+menuOpener.addEventListener('click', () => {
+  if (!menuOpen) {
     menuOpener.classList.add('open')
     menuOpen = true
   } else {
