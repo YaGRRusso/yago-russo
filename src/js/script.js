@@ -113,21 +113,36 @@ function animeBar() {
   }, 10);
 }
 
-
+// skills.hard.length
 // Section STACKS
 function stackWrite() {
-  let stacksImg = '';
-  for (let i = 0; i < skills.hard.length; i++) {
-    stacksImg += `
-    
-    <div class="stack">
-      ${skills.hard[i].svg}
-      ${skills.hard[i].name}
-    </div>
+  let numbers = [];
+  
+  for(let i=1; i<=6; i++){
+    let random = Math.floor(Math.random() * skills.hard.length);
 
-    `;
+    while (numbers.includes(random)){
+      random = Math.floor(Math.random() * skills.hard.length);
+    }
+    numbers.push(random);
+
+    document.querySelector(`[data-stack="${i}"]`).innerHTML = `
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+      <title>${skills.hard[random].name}</title>
+      ${skills.hard[random].svg}
+    </svg>
+    
+    `
   }
-  document.querySelector('.stacks .section-body').innerHTML = stacksImg;
+}
+
+function hide(){
+  document.querySelector(`.stack-display`).style.opacity = '0';
+  setTimeout(()=>{
+    stackWrite();
+    document.querySelector(`.stack-display`).style.opacity = '1';
+  },1000)
 }
 
 
@@ -135,6 +150,7 @@ function stackWrite() {
 aboutWrite('about');
 typeWriter();
 stackWrite();
+setInterval(hide, 5000);
 
 // MOBILE
 const menuOpener = document.querySelector('.menu-opener')
