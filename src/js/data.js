@@ -79,23 +79,100 @@ let formations = [{
 let courses = [{
     name: 'Next',
     institute: 'Udemy',
-    hours: 27,
+    hours: 28,
     description: 'React | Next | Typescript | Firebase | TailwindCSS',
-    link: 'https://google.com'
+    link: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-983fd49d-5816-45cc-9d30-1173a39ea866.pdf'
   },
   {
-    name: 'Next',
-    institute: 'Udemy',
-    hours: 27,
-    description: 'React | Next | Typescript | Firebase | TailwindCSS',
-    link: 'https://google.com'
+    name: 'Javascript',
+    institute: 'B7Web',
+    hours: 44,
+    description: 'Javacript | Rest API | ES6 | DOM',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_3215285.jpg'
   },
   {
-    name: 'Next',
-    institute: 'Udemy',
-    hours: 27,
-    description: 'React | Next | Typescript | Firebase | TailwindCSS',
-    link: 'https://google.com'
+    name: 'HTML5 e CSS3',
+    institute: 'B7Web',
+    hours: 89,
+    description: 'HTML5 | CSS3 | Responsividade | SEO',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_8650229.jpg'
+  },
+  {
+    name: 'Typescript',
+    institute: 'B7Web',
+    hours: 20,
+    description: 'Typescript',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_4076622.jpg'
+  },
+  {
+    name: 'SASS',
+    institute: 'B7Web',
+    hours: 20,
+    description: 'Sass | Webpack',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_9653220.jpg'
+  },
+  {
+    name: 'Banco de Dados',
+    institute: 'B7Web',
+    hours: 20,
+    description: 'SQL | HeidiSQL',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_3610821.jpg'
+  },
+  {
+    name: 'Bootstrap4',
+    institute: 'B7Web',
+    hours: 20,
+    description: 'Bootstrap 4',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_8838042.jpg'
+  },
+  {
+    name: 'Git/Github',
+    institute: 'B7Web',
+    hours: 20,
+    description: 'Comandos Git | Repositórios Github',
+    link: 'https://alunos.b7web.com.br/media/certificates/certificado_6673888.jpg'
+  },
+  {
+    name: 'Design Gráfico',
+    institute: 'Instituo Mix de Profissões',
+    hours: 99,
+    description: 'Photoshop | Illustrator | Premiere',
+    link: ''
+  },
+  {
+    name: 'Informática Básica',
+    institute: 'Instituo Mix de Profissões',
+    hours: 90,
+    description: 'Word | Excel | Power Point | Windows | Montagem, Manutenção e Formatação',
+    link: ''
+  },
+  {
+    name: 'Logística',
+    institute: 'Instituo Mix de Profissões',
+    hours: 72,
+    description: 'Logística',
+    link: ''
+  },
+  {
+    name: 'Recursos Humanos',
+    institute: 'Instituo Mix de Profissões',
+    hours: 88,
+    description: 'Gestão de Pessoas',
+    link: ''
+  },
+  {
+    name: 'Administração Financeira',
+    institute: 'Instituo Mix de Profissões',
+    hours: 77,
+    description: 'Gestão Financeira',
+    link: ''
+  },
+  {
+    name: 'Marketing',
+    institute: 'Instituo Mix de Profissões',
+    hours: 75,
+    description: 'UX/UI | Marketing',
+    link: ''
   },
 ]
 

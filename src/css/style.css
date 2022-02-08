@@ -562,8 +562,17 @@ footer{
 }
 
 .footer-left,
+.footer-center,
 .footer-right{
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-right{
+  align-items: flex-start;
 }
 
 .footer-contact{
@@ -605,9 +614,46 @@ footer{
 }
 
 .footer-network img{
-  background-color: var(--secondary);
+  background-color: #88888850;
   border-radius: 3px;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 5px;
+}
+
+.courses{
+  margin-top: 10px;
+}
+
+.courses a {
+  color: var(--sub);
+}
+
+.course:hover{
+  opacity: .9;
+}
+
+.course{
+  background-color: #11161d05;
+  border: 1px solid #3BADCB15;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 360px;
+}
+
+.course-title{
+  font-weight: bold;
+}
+
+.course-hours{
+  font-size: .9rem;
+  float: right;
+  font-weight: 300;
+}
+
+.course-desc{
+  font-size: .8rem;
 }
 
 .copyright{

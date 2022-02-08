@@ -113,7 +113,7 @@ function animeBar() {
   }, 10);
 }
 
-// skills.hard.length
+
 // Section STACKS
 function stackWrite() {
   let numbers = [];
@@ -145,11 +145,38 @@ function hide(){
   },1000)
 }
 
+// FOOTER
+function courseWrite(){
+  let course = ''
+
+  for (let i=0; i<3; i++){
+    let aOpen = '';
+    let aClose= '';
+    if (courses[i].link != ''){
+      aOpen= `<a target="_blank" href="${courses[i].link}">`
+      aClose= '</a>'
+    }
+    course +=`
+
+    ${aOpen}
+      <div class="course">
+        <div class="course-title">${courses[i].name} - ${courses[i].institute}<span class="course-hours">${courses[i].hours} Horas</span></div>
+        <div class="course-desc">${courses[i].description}</div>
+      </div>
+    ${aClose}
+    
+    `
+  }
+
+  document.querySelector('.courses').innerHTML = course;
+}
+
 
 // Funções INICIO
 aboutWrite('about');
 typeWriter();
 stackWrite();
+courseWrite();
 setInterval(hide, 5000);
 
 // MOBILE
