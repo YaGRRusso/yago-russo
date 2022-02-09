@@ -37,7 +37,7 @@ function scrollPercent() {
   let windowPercent = parseInt((100 * windowPos) / windowHeight);
 
   // PROGRESS BAR
-  if (windowPos >= 100) {
+  if (windowPos >= 10) {
     header.classList.add('fix');
     percent.style.display = 'block';
   } else {
@@ -235,7 +235,6 @@ function portfolioWrite() {
 //     Section FOOTER    //
 // ===================== //
 function footerWrite() {
-  document.querySelector('.footer-menu ul').innerHTML = document.querySelector('.header-menu ul').innerHTML;
   document.querySelector('.footer-contact span[data-contact="address"]').innerHTML =
     `${personal.address.neighborhood.long}<br>${personal.address.city.long}, ${personal.address.country.short}`;
   document.querySelector('.footer-contact span[data-contact="phone"]').innerHTML = personal.phone;
