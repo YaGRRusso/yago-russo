@@ -3,7 +3,10 @@ const header = document.querySelector('header');
 const percent = document.querySelector('.percent')
 let txtPos = 0; //Typewriter
 let divPos = []
-
+let menuMobileOpen = false;
+let indexRepeat = [
+  0, 1, 2, 0, 1, 2
+]
 
 
 // ===================== //
@@ -19,11 +22,18 @@ document.querySelectorAll('section').forEach(item => {
 })
 let headerItems = divPos.length;
 
-document.querySelectorAll('.header-menu a').forEach((item, index) => {
+document.querySelectorAll('nav a').forEach((item, index) => {
   item.addEventListener('click', (ev) => {
     ev.preventDefault();
-    window.scrollTo(0, divPos[index].pos - 60)
+    window.scrollTo(0, divPos[indexRepeat[index]].pos - 80)
   })
+})
+
+document.querySelector('.menu-opener--hamb').addEventListener('click', () => {
+  document.querySelector('.header-mobile').classList.toggle('active');
+  document.querySelector('.mobile-modal').classList.toggle('active');
+  menuMobileOpen = !menuMobileOpen;
+  scrollPercent();
 })
 
 
@@ -37,7 +47,7 @@ function scrollPercent() {
   let windowPercent = parseInt((100 * windowPos) / windowHeight);
 
   // PROGRESS BAR
-  if (windowPos >= 10) {
+  if (windowPos >= 10 || menuMobileOpen) {
     header.classList.add('fix');
     percent.style.display = 'block';
   } else {
@@ -50,22 +60,22 @@ function scrollPercent() {
   // HEADER ITEMS
   for (let i = 0; i < headerItems; i++) {
     if (i === 0) {
-      if (windowPos < divPos[1].pos - 60) {
-        document.querySelector(`[data-header="${divPos[0].name}"]`).classList.add('active')
+      if (windowPos < divPos[1].pos - 80) {
+        document.querySelectorAll(`[data-header="${divPos[0].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
-        document.querySelector(`[data-header="${divPos[0].name}"]`).classList.remove('active')
+        document.querySelectorAll(`[data-header="${divPos[0].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else if (i === headerItems - 1) {
-      if (windowPos >= divPos[headerItems - 1].pos - 60) {
-        document.querySelector(`[data-header="${divPos[headerItems-1].name}"]`).classList.add('active')
+      if (windowPos >= divPos[headerItems - 1].pos - 80) {
+        document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
-        document.querySelector(`[data-header="${divPos[headerItems-1].name}"]`).classList.remove('active')
+        document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else {
-      if (windowPos >= divPos[i].pos - 60 && windowPos < divPos[i + 1].pos - 60) {
-        document.querySelector(`[data-header="${divPos[i].name}"]`).classList.add('active')
+      if (windowPos >= divPos[i].pos - 80 && windowPos < divPos[i + 1].pos - 80) {
+        document.querySelectorAll(`[data-header="${divPos[i].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
-        document.querySelector(`[data-header="${divPos[i].name}"]`).classList.remove('active')
+        document.querySelectorAll(`[data-header="${divPos[i].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     }
   }
