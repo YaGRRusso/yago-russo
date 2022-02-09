@@ -19,10 +19,10 @@ document.querySelectorAll('section').forEach(item => {
 })
 let headerItems = divPos.length;
 
-document.querySelectorAll('.header-menu a').forEach((item, index) =>{
-  item.addEventListener('click', (ev)=>{
+document.querySelectorAll('.header-menu a').forEach((item, index) => {
+  item.addEventListener('click', (ev) => {
     ev.preventDefault();
-    window.scrollTo(0, divPos[index].pos-60)
+    window.scrollTo(0, divPos[index].pos - 60)
   })
 })
 
@@ -48,21 +48,21 @@ function scrollPercent() {
 
 
   // HEADER ITEMS
-  for (let i=0; i<headerItems; i++){
-    if (i === 0){
-      if (windowPos < divPos[1].pos-60){
+  for (let i = 0; i < headerItems; i++) {
+    if (i === 0) {
+      if (windowPos < divPos[1].pos - 60) {
         document.querySelector(`[data-header="${divPos[0].name}"]`).classList.add('active')
       } else {
         document.querySelector(`[data-header="${divPos[0].name}"]`).classList.remove('active')
       }
-    } else if (i === headerItems - 1){
-      if (windowPos >= divPos[headerItems-1].pos-60){
+    } else if (i === headerItems - 1) {
+      if (windowPos >= divPos[headerItems - 1].pos - 60) {
         document.querySelector(`[data-header="${divPos[headerItems-1].name}"]`).classList.add('active')
       } else {
         document.querySelector(`[data-header="${divPos[headerItems-1].name}"]`).classList.remove('active')
       }
     } else {
-      if (windowPos >= divPos[i].pos-60 && windowPos < divPos[i+1].pos-60){
+      if (windowPos >= divPos[i].pos - 60 && windowPos < divPos[i + 1].pos - 60) {
         document.querySelector(`[data-header="${divPos[i].name}"]`).classList.add('active')
       } else {
         document.querySelector(`[data-header="${divPos[i].name}"]`).classList.remove('active')
@@ -172,49 +172,42 @@ function animeBar() {
 // ===================== //
 function stackWrite() {
   let numbers = [];
-  
-  for(let i=1; i<=6; i++){
+
+  for (let i = 1; i <= 6; i++) {
     let random = Math.floor(Math.random() * skills.hard.length);
 
-    while (numbers.includes(random)){
+    while (numbers.includes(random)) {
       random = Math.floor(Math.random() * skills.hard.length);
     }
     numbers.push(random);
 
     document.querySelector(`[data-stack="${i}"]`).innerHTML = `
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-      <title>${skills.hard[random].name}</title>
-      ${skills.hard[random].svg}
-    </svg>
+    <img src="./src/img/stacks/${skills.hard[random]}.svg" alt="${skills.hard[random]}" title="${skills.hard[random]}">
     
     `
   }
 }
 
-function hide(){
+function hide() {
   document.querySelector(`.stack-display`).style.opacity = '0';
-  setTimeout(()=>{
+  setTimeout(() => {
     stackWrite();
     document.querySelector(`.stack-display`).style.opacity = '1';
-  },1000)
+  }, 1000)
 }
 
 // ===================== //
 //   Section PORTFOLIO   //
 // ===================== //
-function portfolioWrite(){
+function portfolioWrite() {
   let sites = ''
-  for(let i=0; i<5; i++){
+  for (let i = 4; i >= 0; i--) {
     let stacks = ''
 
-    for (let e=0; 1; e++){
-      stacks += `
-      <div class="grid-item-stack">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-        </svg>
-      </div>`
-      console.log(portfolio[i].stacks[e])
+
+    for (let e = 0; e < portfolio[i].stacks.length; e++) {
+      stacks += `<div class="grid-item-stack"><div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg" alt="${portfolio[i].stacks[e]}" title="${portfolio[i].stacks[e]}"></img></div></div>`
     }
 
     sites += `
@@ -223,15 +216,17 @@ function portfolioWrite(){
       <img src="./media/site.png" alt="">
       <div class="grid-item-title">${portfolio[i].name}</div>
       <div class="grid-item-desc">${portfolio[i].desc}</div>
-      <div class="grid-item-stacks">
+        <div class="grid-item-stacks">
         
+        ${stacks}
         
-
+        </div>
       </div>
-    </div>
     
-    `
+      `
   }
+
+  document.querySelector('.portfolio-grid').innerHTML = sites;
 
 }
 
@@ -239,30 +234,30 @@ function portfolioWrite(){
 // ===================== //
 //     Section FOOTER    //
 // ===================== //
-function footerWrite(){
+function footerWrite() {
   document.querySelector('.footer-menu ul').innerHTML = document.querySelector('.header-menu ul').innerHTML;
   document.querySelector('.footer-contact span[data-contact="address"]').innerHTML =
-  `${personal.address.neighborhood.long}<br>${personal.address.city.long}, ${personal.address.country.short}`;
+    `${personal.address.neighborhood.long}<br>${personal.address.city.long}, ${personal.address.country.short}`;
   document.querySelector('.footer-contact span[data-contact="phone"]').innerHTML = personal.phone;
   document.querySelector('.footer-contact span[data-contact="email"]').innerHTML = personal.email;
   let network = '';
-  for (let i=0; i<3; i++){
-    network += `<a target="_blank" href="${social[i].link}"><img src="./src/img/${social[i].name}.svg" alt="" srcset=""></a>`
+  for (let i = 0; i < 3; i++) {
+    network += `<a target="_blank" href="${social[i].link}"><img src="./src/img/social/${social[i].name}.svg" alt="" srcset=""></a>`
   }
   document.querySelector('.network').innerHTML = network;
 }
 
-function courseWrite(){
+function courseWrite() {
   let course = ''
 
-  for (let i=0; i<3; i++){
+  for (let i = 0; i < 3; i++) {
     let aOpen = '';
-    let aClose= '';
-    if (courses[i].link != ''){
-      aOpen= `<a target="_blank" href="${courses[i].link}">`
-      aClose= '</a>'
+    let aClose = '';
+    if (courses[i].link != '') {
+      aOpen = `<a target="_blank" href="${courses[i].link}">`
+      aClose = '</a>'
     }
-    course +=`
+    course += `
 
     ${aOpen}
       <div class="course">
