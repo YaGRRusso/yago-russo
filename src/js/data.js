@@ -353,19 +353,101 @@ let skills = {
   ]
 }
 
-let social = {
-  github: 'https://github.com/YaGRRusso',
-  linkedin: 'https://linkedin.com/in/yago-russo',
-  site: 'https://yagorussocabral.netlify.app',
-  curriculum: 'https://bit.ly/yagocurriculo',
-  gmail: 'mailto:yagrrusso@gmail.com',
-  whatsapp: 'https://api.whatsapp.com/send/?phone=5551986824203&text=Ol%C3%A1,+Yago,+tudo+bem?&app_absent=0'
-}
+let social = [
+  {
+    name: 'github',
+    link: 'https://github.com/YaGRRusso',
+  },
+  {
+    name: 'linkedin',
+    link: 'https://linkedin.com/in/yago-russo',
+  },
+  {
+    name: 'whatsapp',
+    link: 'https://api.whatsapp.com/send/?phone=5551986824203&text=Ol%C3%A1,+Yago,+tudo+bem?&app_absent=0',
+  },
+  {
+    name: 'gmail',
+    link: 'mailto:yagrrusso@gmail.com',
+  },
+  {
+    name: 'curriculum',
+    link: 'https://bit.ly/yagocurriculo',
+  }
+]
 
-console.log('Personal: ', personal)
-console.log('Experiencies: ', experiencies)
-console.log('Formations: ', formations)
-console.log('Courses: ', courses)
-console.log('Languages: ', languages)
-console.log('Skills: ', skills)
-console.log('Social: ', social)
+let portfolio = [
+  {
+    name: 'Portfolio 1',
+    desc: 'portfolio descrição numero 1 para usar como exemplo em grid do site',
+    link: 'https://google.com',
+    img: '',
+    stacks: [
+      'html5',
+      'css3',
+      'javascript',
+      'react',
+      'git'
+    ]
+  },
+  {
+    name: 'Portfolio 2',
+    desc: 'portfolio descrição numero 2 para usar como exemplo em grid do site',
+    link: 'https://google.com',
+    img: '',
+    stacks: [
+      'html5',
+      'css3',
+      'javascript',
+      'react',
+      'git'
+    ]
+  },
+  {
+    name: 'Portfolio 3',
+    desc: 'portfolio descrição numero 3 para usar como exemplo em grid do site',
+    link: 'https://google.com',
+    img: '',
+    stacks: [
+      'html5',
+      'css3',
+      'javascript',
+      'react',
+      'git'
+    ]
+  },
+  {
+    name: 'Portfolio 4',
+    desc: 'portfolio descrição numero 4 para usar como exemplo em grid do site',
+    link: 'https://google.com',
+    img: '',
+    stacks: [
+      'html5',
+      'css3',
+      'javascript',
+      'react',
+      'git'
+    ]
+  },
+  {
+    name: 'Portfolio 5',
+    desc: 'portfolio descrição numero 5 para usar como exemplo em grid do site',
+    link: 'https://google.com',
+    img: '',
+    stacks: [
+      'html5',
+      'css3',
+      'javascript',
+      'react',
+      'git'
+    ]
+  },
+]
+
+// console.log('Personal: ', personal)
+// console.log('Experiencies: ', experiencies)
+// console.log('Formations: ', formations)
+// console.log('Courses: ', courses)
+// console.log('Languages: ', languages)
+// console.log('Skills: ', skills)
+// console.log('Social: ', social)

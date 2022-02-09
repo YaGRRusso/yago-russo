@@ -2,16 +2,41 @@
 const header = document.querySelector('header');
 const percent = document.querySelector('.percent')
 let txtPos = 0; //Typewriter
+let divPos = []
 
 
-// Header
+
+// ===================== //
+//       LISTENERS       //
+// ===================== //
 window.addEventListener('scroll', scrollPercent)
+
+document.querySelectorAll('section').forEach(item => {
+  divPos.push({
+    name: item.className,
+    pos: item.offsetTop
+  });
+})
+let headerItems = divPos.length;
+
+document.querySelectorAll('.header-menu a').forEach((item, index) =>{
+  item.addEventListener('click', (ev)=>{
+    ev.preventDefault();
+    window.scrollTo(0, divPos[index].pos-60)
+  })
+})
+
+
+// ===================== //
+//     Section HEADER    //
+// ===================== //
 
 function scrollPercent() {
   let windowPos = window.scrollY;
   let windowHeight = document.body.offsetHeight - window.innerHeight;
   let windowPercent = parseInt((100 * windowPos) / windowHeight);
 
+  // PROGRESS BAR
   if (windowPos >= 100) {
     header.classList.add('fix');
     percent.style.display = 'block';
@@ -20,10 +45,35 @@ function scrollPercent() {
     percent.style.display = 'none';
   }
   percent.style.width = `${windowPercent}%`;
+
+
+  // HEADER ITEMS
+  for (let i=0; i<headerItems; i++){
+    if (i === 0){
+      if (windowPos < divPos[1].pos-60){
+        document.querySelector(`[data-header="${divPos[0].name}"]`).classList.add('active')
+      } else {
+        document.querySelector(`[data-header="${divPos[0].name}"]`).classList.remove('active')
+      }
+    } else if (i === headerItems - 1){
+      if (windowPos >= divPos[headerItems-1].pos-60){
+        document.querySelector(`[data-header="${divPos[headerItems-1].name}"]`).classList.add('active')
+      } else {
+        document.querySelector(`[data-header="${divPos[headerItems-1].name}"]`).classList.remove('active')
+      }
+    } else {
+      if (windowPos >= divPos[i].pos-60 && windowPos < divPos[i+1].pos-60){
+        document.querySelector(`[data-header="${divPos[i].name}"]`).classList.add('active')
+      } else {
+        document.querySelector(`[data-header="${divPos[i].name}"]`).classList.remove('active')
+      }
+    }
+  }
 }
 
-
-// Section SOBRE
+// ===================== //
+//     Section SOBRE     //
+// ===================== //
 document.querySelectorAll('.about-box').forEach(item => {
   item.addEventListener('click', () => aboutBoxSelect(item));
 })
@@ -91,8 +141,11 @@ function aboutWrite(info) {
 function typeWriter() {
   let msg = [`
 
-  Tudo bem?<br><br>Me chamo ${personal.name}, tenho ${personal.age} anos e sou apaixonado por informática desde criança, quando ganhei meu primeiro computador.<br>Aprendi muitas coisas sozinho como: design, programação, hardware e até mesmo inglês, sempre amei essa área e ainda sigo aprendendo cada vez mais.<br><br>
-  Aos 17 anos, com tudo o que eu havia aprendido sozinho, dei aulas de informática e design em uma escola reconhecida nacionalmente, o Instituto Mix de Profissões.<br>Aos 19, me formei como técnico em informática pelo instituto federal e hoje sigo no mesmo caminho.
+  Olá, tudo bem?
+  <br><br>
+  Me chamo Yago Russo, tenho ${personal.age} anos e sou apaixonado por informática desde criança, aprendi muitas coisas sozinho como: design, programação, hardware e até mesmo inglês, sempre amei essa área e sigo aprendendo cada vez mais.
+  <br><br>
+  Tenho experiência em programação com freelances, ferramentas pessoais e hobbies, atualmente busco por uma oportunidade profissional efetiva.
 
   `];
   document.querySelector('.about-desc .about').innerHTML = msg[0].substring(0, txtPos) + '<span class="blink">▮</span>';
@@ -114,7 +167,9 @@ function animeBar() {
 }
 
 
-// Section STACKS
+// ===================== //
+//     Section STACKS    //
+// ===================== //
 function stackWrite() {
   let numbers = [];
   
@@ -145,7 +200,58 @@ function hide(){
   },1000)
 }
 
-// FOOTER
+// ===================== //
+//   Section PORTFOLIO   //
+// ===================== //
+function portfolioWrite(){
+  let sites = ''
+  for(let i=0; i<5; i++){
+    let stacks = ''
+
+    for (let e=0; 1; e++){
+      stacks += `
+      <div class="grid-item-stack">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+        </svg>
+      </div>`
+      console.log(portfolio[i].stacks[e])
+    }
+
+    sites += `
+    
+    <div class="grid-item">
+      <img src="./media/site.png" alt="">
+      <div class="grid-item-title">${portfolio[i].name}</div>
+      <div class="grid-item-desc">${portfolio[i].desc}</div>
+      <div class="grid-item-stacks">
+        
+        
+
+      </div>
+    </div>
+    
+    `
+  }
+
+}
+
+
+// ===================== //
+//     Section FOOTER    //
+// ===================== //
+function footerWrite(){
+  document.querySelector('.footer-menu ul').innerHTML = document.querySelector('.header-menu ul').innerHTML;
+  document.querySelector('.footer-contact span[data-contact="address"]').innerHTML =
+  `${personal.address.neighborhood.long}<br>${personal.address.city.long}, ${personal.address.country.short}`;
+  document.querySelector('.footer-contact span[data-contact="phone"]').innerHTML = personal.phone;
+  document.querySelector('.footer-contact span[data-contact="email"]').innerHTML = personal.email;
+  let network = '';
+  for (let i=0; i<3; i++){
+    network += `<a target="_blank" href="${social[i].link}"><img src="./src/img/${social[i].name}.svg" alt="" srcset=""></a>`
+  }
+  document.querySelector('.network').innerHTML = network;
+}
+
 function courseWrite(){
   let course = ''
 
@@ -172,14 +278,20 @@ function courseWrite(){
 }
 
 
-// Funções INICIO
+// ===================== //
+//    Function INICIO    //
+// ===================== //
 aboutWrite('about');
 typeWriter();
 stackWrite();
+portfolioWrite();
+footerWrite();
 courseWrite();
 setInterval(hide, 5000);
 
-// MOBILE
+// ===================== //
+//         MOBILE        //
+// ===================== //
 const menuOpener = document.querySelector('.menu-opener')
 let menuOpen = false
 
