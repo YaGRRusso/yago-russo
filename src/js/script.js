@@ -12,7 +12,10 @@ let indexRepeat = [
 // ===================== //
 //       LISTENERS       //
 // ===================== //
-window.addEventListener('scroll', scrollPercent)
+window.addEventListener('scroll', () => {
+  scrollPercent();
+  scrollAnimation();
+})
 
 document.querySelectorAll('section').forEach(item => {
   divPos.push({
@@ -36,6 +39,22 @@ document.querySelector('.menu-opener--hamb').addEventListener('click', () => {
   scrollPercent();
 })
 
+// ===================== //
+//       ANIMATION       //
+// ===================== //
+function scrollAnimation() {
+  const target = document.querySelectorAll('[data-animation]');
+  const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
+
+  target.forEach(element => {
+    if ((windowTop) > element.offsetTop) {
+      element.classList.add('animationDone');
+    } else {
+      element.classList.remove('animationDone');
+    }
+  })
+}
+
 
 // ===================== //
 //     Section HEADER    //
@@ -49,10 +68,8 @@ function scrollPercent() {
   // PROGRESS BAR
   if (windowPos >= 10 || menuMobileOpen) {
     header.classList.add('fix');
-    percent.style.display = 'block';
   } else {
     header.classList.remove('fix');
-    percent.style.display = 'none';
   }
   percent.style.width = `${windowPercent}%`;
 
@@ -99,53 +116,66 @@ function aboutWrite(info) {
   let type = '';
   let title = '';
   let list = '';
+  let div = '';
+  let display = '';
+
+  document.querySelector('.section-right').classList.remove('animationDone');
+
+
+  // INICIO INFOS
+  document.querySelector('[data-item="name"]').innerHTML = personal.name;
+  document.querySelector('[data-item="year"]').innerHTML = `${personal.age} anos`
+  document.querySelector('[data-item="email"]').innerHTML = personal.email;
+  document.querySelector('[data-item="phone"]').innerHTML = personal.phone;
+  document.querySelector('[data-item="target"]').innerHTML = personal.interest;
+  document.querySelector('[data-item="address"]').innerHTML = `${personal.address.city.long}, ${personal.address.country.short}`;
+
+
+  // INICIO SKILLS
+  skills.stacks.forEach(item => {
+    list += `
+    <li>
+      <h2>${item.name}</h2>
+      <div class="progressBar">
+        <div class="progress" style="width: 10%"><span>${item.level}%</span></div>
+      </div>
+    </li>`
+  })
+  document.querySelector('.skills ul').innerHTML = list;
 
   if (info == 'about') {
     type = 'Introdução';
     title = 'Um pouco sobre mim.';
-
-    document.querySelector('.about-desc .about').style.display = 'inline';
-    document.querySelector('.about-desc .infos').style.display = 'none';
-    document.querySelector('.about-desc .skills').style.display = 'none';
+    div = '.about';
+    display = 'inline';
   }
   if (info == 'information') {
     type = 'Informações';
     title = 'Tudo sobre mim.';
-
-    document.querySelector('[data-item="name"]').innerHTML = personal.name;
-    document.querySelector('[data-item="year"]').innerHTML = `${personal.age} anos`
-    document.querySelector('[data-item="email"]').innerHTML = personal.email;
-    document.querySelector('[data-item="phone"]').innerHTML = personal.phone;
-    document.querySelector('[data-item="target"]').innerHTML = personal.interest;
-    document.querySelector('[data-item="address"]').innerHTML = `${personal.address.city.long}, ${personal.address.country.short}`;
-
-    document.querySelector('.about-desc .about').style.display = 'none';
-    document.querySelector('.about-desc .infos').style.display = 'contents';
-    document.querySelector('.about-desc .skills').style.display = 'none';
+    div = '.infos';
+    display = 'contents';
   }
   if (info == 'skills') {
     type = 'Habilidades';
     title = 'O que sei.';
-
-    skills.stacks.forEach(item => {
-      list += `
-      <li>
-        <h2>${item.name}</h2>
-        <div class="progressBar">
-          <div class="progress" style="width: 10%"><span>${item.level}%</span></div>
-        </div>
-      </li>`
-    })
-
-    document.querySelector('.skills ul').innerHTML = list;
-    document.querySelector('.about-desc .about').style.display = 'none';
-    document.querySelector('.about-desc .infos').style.display = 'none';
-    document.querySelector('.about-desc .skills').style.display = 'contents';
+    div = '.skills';
+    display = 'contents';
     animeBar();
   }
 
-  document.querySelector('.about-type').innerHTML = type;
-  document.querySelector('.about-title').innerHTML = title;
+  setTimeout(() => {
+    document.querySelector('.section-right').classList.add('animationDone');
+    document.querySelector('.about-desc .about').style.display = 'none';
+    document.querySelector('.about-desc .infos').style.display = 'none';
+    document.querySelector('.about-desc .skills').style.display = 'none';
+
+    document.querySelector(`.about-desc ${div}`).style.display = display;
+    document.querySelector('.about-type').innerHTML = type;
+    document.querySelector('.about-title').innerHTML = title;
+  }, 300)
+
+
+
 }
 
 function typeWriter() {
@@ -173,7 +203,7 @@ function animeBar() {
       let percent = bar.querySelector('span').innerHTML;
       bar.style.width = percent;
     })
-  }, 10);
+  }, 400);
 }
 
 
@@ -222,7 +252,7 @@ function portfolioWrite() {
 
     sites += `
     
-    <div class="grid-item">
+    <div class="grid-item" data-animation="bottom">
       <img src="./media/site.png" alt="">
       <div class="grid-item-title">${portfolio[i].name}</div>
       <div class="grid-item-desc">${portfolio[i].desc}</div>
@@ -285,6 +315,7 @@ function courseWrite() {
 // ===================== //
 //    Function INICIO    //
 // ===================== //
+scrollAnimation();
 aboutWrite('about');
 typeWriter();
 stackWrite();
