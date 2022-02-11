@@ -120,11 +120,7 @@ textarea {
   text-transform: uppercase;
 }
 
-.btn a {
-  color: var(--default);
-}
-
-.btn:hover {
+form .btn:hover {
   opacity: 0.75;
 }
 

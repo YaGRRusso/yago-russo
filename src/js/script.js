@@ -7,7 +7,9 @@ let menuMobileOpen = false;
 let indexRepeat = [
   0, 1, 2, 0, 1, 2
 ]
-
+document.querySelectorAll('[data-cv]').forEach(a => {
+  a.href = social[4].link;
+})
 
 // ===================== //
 //       LISTENERS       //
@@ -247,21 +249,23 @@ function portfolioWrite() {
 
 
     for (let e = 0; e < portfolio[i].stacks.length; e++) {
-      stacks += `<div class="grid-item-stack"><div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg" alt="${portfolio[i].stacks[e]}" title="${portfolio[i].stacks[e]}"></img></div></div>`
+      stacks += `<div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg" alt="${portfolio[i].stacks[e]}" title="${portfolio[i].stacks[e]}"></img></div>`
     }
 
     sites += `
     
     <div class="grid-item" data-animation="bottom">
-      <img src="./media/site.png" alt="">
+      <a href="${portfolio[i].link}" target="_blank">
+        <img src="./media/site.png" alt="Imagem">
+      </a>
       <div class="grid-item-title">${portfolio[i].name}</div>
       <div class="grid-item-desc">${portfolio[i].desc}</div>
-        <div class="grid-item-stacks">
+      <div class="grid-item-stacks">
         
         ${stacks}
         
-        </div>
       </div>
+    </div>
     
       `
   }
@@ -270,6 +274,18 @@ function portfolioWrite() {
 
 }
 
+
+// ===================== //
+//     Section EMAIL     //
+// ===================== //
+function sendEmail() {
+  let name = document.querySelector('#em-name').value
+  let email = document.querySelector('#em-email').value
+  let subject = document.querySelector('#em-subject').value
+  let message = document.querySelector('#em-message').value
+
+  window.location = `mailto:yagrrusso@gmail.com?subject=${subject}&body=${message}%0D%0A%0D%0A${name}%0D%0A${email}`
+}
 
 // ===================== //
 //     Section FOOTER    //
@@ -281,7 +297,7 @@ function footerWrite() {
   document.querySelector('.footer-contact span[data-contact="email"]').innerHTML = personal.email;
   let network = '';
   for (let i = 0; i < 3; i++) {
-    network += `<a target="_blank" href="${social[i].link}"><img src="./src/img/social/${social[i].name}.svg" alt="" srcset=""></a>`
+    network += `<a target="_blank" href="${social[i].link}"><img src="./src/img/social/${social[i].name}.svg" alt="${social[i].name}" title="${social[i].name}"></a>`
   }
   document.querySelector('.network').innerHTML = network;
 }

@@ -26,7 +26,9 @@
           </nav>
         </div>
         <div class="header-cv">
-          <button class="btn">Baixar CV <img src="./src/img/icons/download.svg" alt=""></button>
+          <a href="" target="_blank" data-cv>
+            <button class="btn">Baixar CV <img src="./src/img/icons/download.svg" alt="Download"></button>
+          </a>
         </div>
         <div class="menu-opener">
           <div class="menu-opener--hamb"></div>
@@ -39,12 +41,15 @@
       <p>Menu</p>
       <nav>
         <ul>
-          <li><img src="./src/img/icons/person.svg" alt=""><a href="" class="active" data-header="about">Sobre</a></li>
-          <li><img src="./src/img/icons/work.svg" alt=""><a href="" data-header="portfolio">Portfolio</a></li>
-          <li><img src="./src/img/icons/email.svg" alt=""><a href="" data-header="footer">Contato</a></li>
+          <li><img src="./src/img/icons/person.svg" alt="Person"><a href="" class="active" data-header="about">Sobre</a>
+          </li>
+          <li><img src="./src/img/icons/work.svg" alt="Work"><a href="" data-header="portfolio">Portfolio</a></li>
+          <li><img src="./src/img/icons/email.svg" alt="Email"><a href="" data-header="footer">Contato</a></li>
         </ul>
       </nav>
-      <button class="btn">Baixar CV <img src="./src/img/icons/download.svg" alt=""></button>
+      <a href="" target="_blank" data-cv>
+        <button class="btn">Baixar CV <img src="./src/img/icons/download.svg" alt="Download"></button>
+      </a>
     </div>
 
     <div class="intro">
@@ -52,10 +57,10 @@
         <h2><span>//</span>Olá, me chamo Yago Russo <img src="./src/img/icons/wave.gif"></h2>
         <h1>Full-Stack<br>Web Developer</h1>
         <p>Desenvolvedor, designer e apaixonado por tecnologia.</p>
-        <a href="">.FaleComigo( );</a>
+        <a href="mailto:yagrrusso@gmail.com">.FaleComigo( );</a>
       </div>
       <div class="intro-right" data-animation="right">
-        <img src="./media/code.svg" alt="">
+        <img src="./media/code.svg" alt="Imagem">
       </div>
     </div>
   </div>
@@ -175,14 +180,7 @@
       <div class="portfolio-grid">
 
         <div class="grid-item">
-          <img src="./media/site.png" alt="">
-          <div class="grid-item-title">Website Name</div>
-          <div class="grid-item-desc"></div>
-          <div class="grid-item-stacks">
 
-            <div class="grid-item-stack"><img src="./src/img/stacks/html5.svg" alt="" title=""></img></div>
-
-          </div>
         </div>
 
 
@@ -207,23 +205,23 @@
         </div>
 
         <div class="footer-email" data-animation="bottom">
-          <form action="">
+          <form method="post" action="#">
 
             <div class="form-line">
-              <input type="text" placeholder="Nome">
-              <input type="email" placeholder="Email">
+              <input id="em-name" type="text" placeholder="Nome">
+              <input id="em-email" type="email" placeholder="Email">
             </div>
 
             <div class="form-line">
-              <input type="text" placeholder="Assunto">
+              <input id="em-subject" type="text" placeholder="Assunto">
             </div>
 
             <div class="form-line">
-              <textarea name="" cols="30" rows="10" placeholder="Mensagem"></textarea>
+              <textarea id="em-message" cols="30" rows="10" placeholder="Mensagem"></textarea>
             </div>
 
             <div class="form-line">
-              <button class="btn" type="submit">Enviar</button>
+              <button class="btn" onclick="sendEmail()" type="submit">Enviar</button>
             </div>
 
           </form>
@@ -234,15 +232,15 @@
           <div class="footer-left" data-animation="left">
             <div class="footer-contacts">
               <div class="footer-contact">
-                <img src="./src/img/icons/address.svg" alt="">
+                <img src="./src/img/icons/address.svg" alt="Address">
                 <span data-contact="address"></span>
               </div>
               <div class="footer-contact">
-                <img src="./src/img/icons/phone.svg" alt="">
+                <img src="./src/img/icons/phone.svg" alt="Phone">
                 <span data-contact="phone"></span>
               </div>
               <div class="footer-contact">
-                <img src="./src/img/icons/email.svg" alt="">
+                <img src="./src/img/icons/email.svg" alt="Email">
                 <span data-contact="email"></span>
               </div>
             </div>
