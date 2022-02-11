@@ -849,6 +849,48 @@ form {
   margin: auto;
 }
 
+.menu-opener {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-opener--hamb,
+.menu-opener--hamb::before,
+.menu-opener--hamb::after {
+  height: 4px;
+  width: 32px;
+  background-color: var(--primary);
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+
+.menu-opener--hamb::before,
+.menu-opener--hamb::after {
+  content: "";
+  position: absolute;
+}
+
+.menu-opener--hamb::before {
+  transform: translateY(-10px);
+}
+
+.menu-opener--hamb::after {
+  transform: translateY(10px);
+}
+
+.menu-opener.open .menu-opener--hamb {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu-opener.open .menu-opener--hamb::before {
+  transform: rotate(45deg) translate(35px, -35px)
+}
+
+.menu-opener.open .menu-opener--hamb::after {
+  transform: rotate(-45deg) translate(35px, 35px)
+}
+
 
 @media (max-width: 770px) {
 
