@@ -251,25 +251,34 @@ function portfolioWrite() {
 
 
     for (let e = 0; e < portfolio[i].stacks.length; e++) {
-      stacks += `<div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg" alt="${portfolio[i].stacks[e]}" title="${portfolio[i].stacks[e]}"></img></div>`
+      stacks += `<div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg"></div>`
     }
 
     sites += `
-    
+
     <div class="grid-item" data-animation="bottom">
-      <a href="${portfolio[i].link}" target="_blank">
+
+      <a href="" target="_blank">
         <img src="./media/site.png" alt="Imagem">
       </a>
-      <div class="grid-item-title">${portfolio[i].name}</div>
-      <div class="grid-item-desc">${portfolio[i].desc}</div>
-      <div class="grid-item-stacks">
-        
-        ${stacks}
-        
+      <div class="grid-item-container">
+        <div class="grid-item-title">
+          ${portfolio[i].name}
+          <div class="grid-item-stacks">
+            ${stacks}
+          </div>
+        </div>
+
+        <div class="grid-item-desc">
+          ${portfolio[i].desc}
+        </div>
+        <div class="grid-item-buttons">
+          <a href=""><img src="./src/img/social/github.svg" alt="github">Código</a>
+          <a href=""><img src="./src/img/social/site.svg" alt="github">Site</a>
+        </div>
       </div>
-    </div>
-    
-      `
+
+    </div>`
   }
 
   document.querySelector('.portfolio-grid').innerHTML = sites;
