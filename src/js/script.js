@@ -70,10 +70,8 @@ function scrollPercent() {
   // PROGRESS BAR
   if (windowPos >= 10 || menuMobileOpen) {
     header.classList.add('fix');
-    // document.querySelector('.arrowDown').style.opacity = 0
   } else {
     header.classList.remove('fix');
-    // document.querySelector('.arrowDown').style.opacity = 1
   }
   percent.style.width = `${windowPercent}%`;
 
@@ -87,13 +85,13 @@ function scrollPercent() {
         document.querySelectorAll(`[data-header="${divPos[0].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else if (i === headerItems - 1) {
-      if (windowPos >= divPos[headerItems - 1].pos - 80) {
+      if (windowPos >= divPos[headerItems - 1].pos + 500) {
         document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
         document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else {
-      if (windowPos >= divPos[i].pos - 80 && windowPos < divPos[i + 1].pos - 80) {
+      if (windowPos >= divPos[i].pos - 80 && windowPos < divPos[i + 1].pos + 500) {
         document.querySelectorAll(`[data-header="${divPos[i].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
         document.querySelectorAll(`[data-header="${divPos[i].name}"]`).forEach((i) => i.classList.remove('active'))
@@ -340,7 +338,7 @@ InfoWrite();
 aboutWrite('about');
 typeWriter();
 stackWrite();
-portfolioWrite();
+// portfolioWrite();
 footerWrite();
 courseWrite();
 setInterval(hide, 5000);
