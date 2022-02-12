@@ -70,8 +70,10 @@ function scrollPercent() {
   // PROGRESS BAR
   if (windowPos >= 10 || menuMobileOpen) {
     header.classList.add('fix');
+    // document.querySelector('.arrowDown').style.opacity = 0
   } else {
     header.classList.remove('fix');
+    // document.querySelector('.arrowDown').style.opacity = 1
   }
   percent.style.width = `${windowPercent}%`;
 
@@ -114,15 +116,8 @@ function aboutBoxSelect(i) {
   aboutWrite(info);
 }
 
-function aboutWrite(info) {
-  let type = '';
-  let title = '';
+function InfoWrite() {
   let list = '';
-  let div = '';
-  let display = '';
-
-  document.querySelector('.section-right').classList.remove('animationDone');
-
 
   // INICIO INFOS
   document.querySelector('[data-item="name"]').innerHTML = personal.name;
@@ -144,6 +139,15 @@ function aboutWrite(info) {
     </li>`
   })
   document.querySelector('.skills ul').innerHTML = list;
+}
+
+function aboutWrite(info) {
+  let type = '';
+  let title = '';
+  let div = '';
+  let display = '';
+
+  document.querySelector('.section-right').classList.remove('animationDone');
 
   if (info == 'about') {
     type = 'Introdução';
@@ -165,8 +169,8 @@ function aboutWrite(info) {
     animeBar();
   }
 
+  //Efeito de Animação
   setTimeout(() => {
-    document.querySelector('.section-right').classList.add('animationDone');
     document.querySelector('.about-desc .about').style.display = 'none';
     document.querySelector('.about-desc .infos').style.display = 'none';
     document.querySelector('.about-desc .skills').style.display = 'none';
@@ -174,9 +178,9 @@ function aboutWrite(info) {
     document.querySelector(`.about-desc ${div}`).style.display = display;
     document.querySelector('.about-type').innerHTML = type;
     document.querySelector('.about-title').innerHTML = title;
+
+    document.querySelector('.section-right').classList.add('animationDone');
   }, 300)
-
-
 
 }
 
@@ -332,6 +336,7 @@ function courseWrite() {
 //    Function INICIO    //
 // ===================== //
 scrollAnimation();
+InfoWrite();
 aboutWrite('about');
 typeWriter();
 stackWrite();

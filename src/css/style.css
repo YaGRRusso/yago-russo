@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
-@import url(./mobile.css);
 
 :root {
   --maxContainer: 1140px;
@@ -37,6 +36,7 @@
 html {
   font-size: 14px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -99,9 +99,17 @@ textarea {
   transform: translate3d(0, 50px, 0)
 }
 
+[data-animation="arrow"] {
+  opacity: 1;
+}
+
 [data-animation].animationDone {
   opacity: 1;
   transform: translate3d(0, 0, 0)
+}
+
+[data-animation="arrow"].animationDone {
+  opacity: 0;
 }
 
 .btn {
@@ -127,9 +135,8 @@ form .btn:hover {
 .hello {
   background-image: var(--backgroundImg);
   background-color: var(--background1);
-  background-position: center;
+  background-position: -300px;
   background-size: cover;
-  /* background-attachment: fixed; */
 }
 
 header {
@@ -229,7 +236,7 @@ header {
   max-width: var(--maxContainer);
   width: var(--container);
   margin: auto;
-  height: 95vh;
+  height: calc(95vh - 45px);
   min-height: 450px;
   display: flex;
   justify-content: space-between;
@@ -283,6 +290,41 @@ header {
 .intro-right img {
   width: 100%;
   height: auto;
+}
+
+.arrowDown {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  bottom: 15px;
+  animation: arrowDown 1.5s infinite;
+  flex-direction: column;
+}
+
+.arrowDown span {
+  color: var(--sub);
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.arrowDown img {
+  width: 2rem;
+}
+
+@keyframes arrowDown {
+
+  0%,
+  100% {
+    transform: translateY(3px);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
 }
 
 .about {
@@ -628,6 +670,11 @@ header {
 
 .grid-item-stack {
   width: 30px;
+  text-transform: capitalize;
+}
+
+.grid-item-stack {
+  width: 30px;
 }
 
 .grid-item-stack img {
@@ -894,6 +941,9 @@ form {
 
 @media (max-width: 770px) {
 
+  .hello {
+    background-position: center;
+  }
 
   .header-menu ul {
     display: none;
@@ -924,6 +974,11 @@ form {
   .intro-right {
     margin-bottom: 30px;
     width: 90%;
+  }
+
+  .intro-right img {
+    width: 90%;
+    height: auto;
   }
 
   .intro-left {
