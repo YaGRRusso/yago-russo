@@ -14,6 +14,22 @@ document.querySelectorAll('[data-cv]').forEach(a => {
 // ===================== //
 //       LISTENERS       //
 // ===================== //
+function screenInit() {
+  if (document.readyState == 'interactive') {
+    clearInterval(loadingScreen);
+    console.log('Completo')
+  }
+}
+
+screenInit();
+let loadingScreen = setInterval(() => {
+  screenInit();
+}, 500)
+
+// while (document.readyState == 'loading') {
+
+// }
+
 window.addEventListener('scroll', () => {
   scrollPercent();
   scrollAnimation();
