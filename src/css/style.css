@@ -8,8 +8,7 @@
   --background1: #1a2029;
   --background2: #131820;
   --background3: #11161d;
-  --background4: #a8bbd6;
-  --backgroundImg: url(../img/backgroundBlue.png);
+  --background4: #5779a8;
 
   --primary: #3BADCB;
   --secondary: #3BADCB25;
@@ -117,7 +116,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #00000099;
+  background-color: #000000dd;
   height: 100%;
   width: 100%;
   z-index: 1000;
@@ -125,13 +124,24 @@ textarea {
 
 .portfolio-modal span {
   position: absolute;
-  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
   right: 10px;
-  font-size: 5rem;
-  font-weight: bold;
+  font-size: 4rem;
+  font-weight: 300;
+  width: 40px;
+  height: 40px;
   color: var(--emphasis);
   cursor: pointer;
   z-index: 1000;
+}
+
+.portfolio-modal span:hover {
+  border-radius: 5px;
+  background-color: #aaaaaa25;
+  border: 1px solid #aaa;
 }
 
 .portfolio-modal img {
@@ -139,7 +149,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid var(--header);
+  border: 1px solid var(--primary);
   border-radius: 5px;
   width: 760px;
   object-fit: cover;
@@ -166,7 +176,7 @@ form .btn:hover {
 }
 
 .hello {
-  background-image: var(--backgroundImg);
+  background-image: url(../img/wallpapers/circles.png);
   background-color: var(--background1);
   background-position: -300px;
   background-size: cover;
@@ -663,6 +673,7 @@ header {
 .portfolio {
   background-color: var(--background4);
   border-top: 1px solid var(--background1);
+  background-image: url(../img/wallpapers/graphy.png);
 }
 
 .portfolio .section-body {
@@ -939,7 +950,7 @@ form {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: #00000099;
+  background-color: #000000dd;
   z-index: 500;
 }
 

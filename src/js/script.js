@@ -34,13 +34,6 @@ document.querySelectorAll('nav a').forEach((item, index) => {
   })
 })
 
-document.querySelector('.menu-opener--hamb').addEventListener('click', () => {
-  document.querySelector('.header-mobile').classList.toggle('active');
-  document.querySelector('.mobile-modal').classList.toggle('active');
-  menuMobileOpen = !menuMobileOpen;
-  scrollPercent();
-})
-
 // ===================== //
 //       ANIMATION       //
 // ===================== //
@@ -258,7 +251,7 @@ function portfolioWrite() {
 
     <div class="grid-item" data-animation="bottom">
 
-      <img src="./media/${portfolio[i].img ? portfolio[i].img : 'site'}.png" alt="Imagem" class="grid-item-img">
+      <img src="./media/sites/${portfolio[i].img ? portfolio[i].img : 'site'}.png" alt="Imagem" class="grid-item-img">
       <div class="grid-item-container">
         <div class="grid-item-title">
           <p>${portfolio[i].name}</p>
@@ -295,6 +288,10 @@ function portfolioZoom() {
 
 document.querySelector('.portfolio-modal span').addEventListener('click', () => {
   document.querySelector('.portfolio-modal').style.display = 'none';
+})
+
+document.querySelector('.portfolio-modal').addEventListener('click', (item) => {
+  item.currentTarget.style.display = 'none';
 })
 
 
@@ -368,14 +365,27 @@ setInterval(hide, 5000);
 //         MOBILE        //
 // ===================== //
 const menuOpener = document.querySelector('.menu-opener')
-let menuOpen = false
 
 menuOpener.addEventListener('click', () => {
-  if (!menuOpen) {
+  document.querySelector('.header-mobile').classList.toggle('active');
+  document.querySelector('.mobile-modal').classList.toggle('active');
+
+  if (!menuMobileOpen) {
     menuOpener.classList.add('open')
-    menuOpen = true
+    menuMobileOpen = true
   } else {
     menuOpener.classList.remove('open')
-    menuOpen = false
+    menuMobileOpen = false
   }
+
+  scrollPercent();
+})
+
+document.querySelector('.mobile-modal').addEventListener('click', () => {
+  document.querySelector('.header-mobile').classList.remove('active');
+  document.querySelector('.mobile-modal').classList.remove('active');
+  menuOpener.classList.remove('open')
+  menuMobileOpen = false
+
+  scrollPercent();
 })
