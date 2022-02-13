@@ -251,19 +251,17 @@ function portfolioWrite() {
 
 
     for (let e = 0; e < portfolio[i].stacks.length; e++) {
-      stacks += `<div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg"></div>`
+      stacks += `<div class="grid-item-stack"><img src="./src/img/stacks/${portfolio[i].stacks[e]}.svg" alt="${portfolio[i].stacks[e]}" title="${portfolio[i].stacks[e]}"></div>`
     }
 
     sites += `
 
     <div class="grid-item" data-animation="bottom">
 
-      <a href="" target="_blank">
-        <img src="./media/site.png" alt="Imagem">
-      </a>
+      <img src="./media/${portfolio[i].img ? portfolio[i].img : 'site'}.png" alt="Imagem" class="grid-item-img">
       <div class="grid-item-container">
         <div class="grid-item-title">
-          ${portfolio[i].name}
+          <p>${portfolio[i].name}</p>
           <div class="grid-item-stacks">
             ${stacks}
           </div>
@@ -273,8 +271,8 @@ function portfolioWrite() {
           ${portfolio[i].desc}
         </div>
         <div class="grid-item-buttons">
-          <a href=""><img src="./src/img/social/github.svg" alt="github">Código</a>
-          <a href=""><img src="./src/img/social/site.svg" alt="github">Site</a>
+          <a href="${portfolio[i].github}" target="_blank"><img src="./src/img/social/github.svg" alt="github">Código</a>
+          <a href="${portfolio[i].site}" target="_blank"><img src="./src/img/social/site.svg" alt="site">Site</a>
         </div>
       </div>
 
@@ -282,8 +280,22 @@ function portfolioWrite() {
   }
 
   document.querySelector('.portfolio-grid').innerHTML = sites;
+  portfolioZoom();
 
 }
+
+function portfolioZoom() {
+  document.querySelectorAll('.grid-item-img').forEach((item) => {
+    item.addEventListener('click', (ev) => {
+      document.querySelector('.portfolio-modal').style.display = 'block';
+      document.querySelector('.portfolio-modal img').src = ev.target.src
+    })
+  })
+}
+
+document.querySelector('.portfolio-modal span').addEventListener('click', () => {
+  document.querySelector('.portfolio-modal').style.display = 'none';
+})
 
 
 // ===================== //
@@ -347,7 +359,7 @@ InfoWrite();
 aboutWrite('about');
 typeWriter();
 stackWrite();
-// portfolioWrite();
+portfolioWrite();
 footerWrite();
 courseWrite();
 setInterval(hide, 5000);

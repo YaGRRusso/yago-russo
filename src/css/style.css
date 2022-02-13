@@ -84,7 +84,7 @@ textarea {
 
 [data-animation] {
   opacity: 0;
-  transition: .75s;
+  transition: 1s;
 }
 
 [data-animation="left"] {
@@ -110,6 +110,39 @@ textarea {
 
 [data-animation="arrow"].animationDone {
   opacity: 0;
+}
+
+.portfolio-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000099;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.portfolio-modal span {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--emphasis);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.portfolio-modal img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--header);
+  border-radius: 5px;
+  width: 760px;
+  object-fit: cover;
 }
 
 .btn {
@@ -677,25 +710,29 @@ header {
 .grid-item img {
   width: 100%;
   border-radius: 5px 5px 0 0;
+  cursor: pointer;
 }
 
-.grid-item a:hover {
-  opacity: 0.9
+.grid-item img:hover {
+  opacity: .9;
 }
 
 .grid-item-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--default);
-  font-size: 1.5rem;
   width: 100%;
   border-bottom: 1px solid #aaaaaa50;
   padding-bottom: 3px;
 }
 
+.grid-item-title p {
+  color: var(--default);
+  font-size: 1.5rem;
+  flex: 1;
+}
+
 .grid-item-stacks {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -902,7 +939,7 @@ form {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: #00000090;
+  background-color: #00000099;
   z-index: 500;
 }
 
@@ -998,6 +1035,15 @@ form {
 
 
 @media (max-width: 770px) {
+
+  .portfolio-modal img {
+    width: 95%;
+  }
+
+  .portfolio-modal-container {
+    width: 95%;
+    max-height: 95%;
+  }
 
   .hello {
     background-position: center;

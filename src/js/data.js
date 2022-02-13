@@ -285,8 +285,9 @@ let social = [{
 let portfolio = [{
     name: 'Cactus E-Commerce',
     desc: 'Site para catálogo, controle de estoque e encomendas de roupas',
-    link: 'https://cactusveste.000webhostapp.com/',
-    img: '',
+    site: 'https://cactusveste.000webhostapp.com/',
+    github: 'https://github.com/YaGRRusso/tcc-cactus-e-commerce',
+    img: 'cactus',
     stacks: [
       'html5',
       'css3',
