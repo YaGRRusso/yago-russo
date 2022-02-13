@@ -372,10 +372,10 @@ menuOpener.addEventListener('click', () => {
 
   if (!menuMobileOpen) {
     menuOpener.classList.add('open')
-    menuMobileOpen = true
+    menuMobileOpen = true;
   } else {
     menuOpener.classList.remove('open')
-    menuMobileOpen = false
+    menuMobileOpen = false;
   }
 
   scrollPercent();
