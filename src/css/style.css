@@ -18,17 +18,17 @@
 }
 
 .dark-mode:root {
-  --header: #c2c2cc;
-  --background1: #9aa4b3;
-  --background2: #909bac;
-  --background3: #68717e;
-  --background4: #5779a8;
-  --primary: #3BADCB;
+  --header: #e5e5f0;
+  --background1: #b2c3e2;
+  --background2: #9dafcf;
+  --background3: #99abca;
+  --background4: #b2c3e2;
+  --primary: #1ca7ca;
   --secondary: #3BADCB25;
   --tertiary: #154652;
-  --emphasis: #ffffff;
-  --default: #dddddd;
-  --sub: #aaaaaa;
+  --emphasis: #000000;
+  --default: #111111;
+  --sub: #121212;
   --dark: #00000030
 }
 
@@ -220,7 +220,7 @@ textarea {
   color: var(--default);
   cursor: pointer;
   padding: .3rem 1rem;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--default);
   background: 0 0;
   border-radius: 10px;
   backdrop-filter: blur(1px);
@@ -309,6 +309,12 @@ header {
 
 .header-menu li a.active::after {
   content:" {...}"
+}
+
+.header-cv {
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 .header-cv {
@@ -491,7 +497,8 @@ header {
   padding: 30px;
   cursor: pointer;
   transition: all .25s;
-  border-radius: 5px
+  border-radius: 5px;
+  border: 1px solid #00000099;
 }
 
 .about-box.selected {
@@ -737,7 +744,7 @@ header {
 }
 
 .portfolio .section-title {
-  color: var(--header);
+  color: var(--emphasis);
   font-weight: 500;
   margin: 0
 }
