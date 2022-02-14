@@ -1,69 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap);
 
 :root {
   --maxContainer: 1140px;
   --container: 90%;
-
   --header: #0d0d14;
   --background1: #1a2029;
   --background2: #131820;
   --background3: #11161d;
   --background4: #5779a8;
-
   --primary: #3BADCB;
   --secondary: #3BADCB25;
   --tertiary: #154652;
   --emphasis: #ffffff;
   --default: #dddddd;
   --sub: #aaaaaa;
-  --dark: #00000030;
+  --dark: #00000030
+}
+
+.dark-mode:root {
+  --header: #c2c2cc;
+  --background1: #9aa4b3;
+  --background2: #909bac;
+  --background3: #68717e;
+  --background4: #5779a8;
+  --primary: #3BADCB;
+  --secondary: #3BADCB25;
+  --tertiary: #154652;
+  --emphasis: #ffffff;
+  --default: #dddddd;
+  --sub: #aaaaaa;
+  --dark: #00000030
 }
 
 ::-webkit-scrollbar {
   width: 3px;
-  height: 3px;
+  height: 3px
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--background2);
+  background-color: var(--background2)
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--tertiary);
+  background: var(--tertiary)
 }
 
 html {
   font-size: 14px;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif
 }
 
 section {
-  overflow-x: hidden;
+  overflow-x: hidden
 }
 
-ul,
-li {
-  list-style: none;
+li,
+ul {
+  list-style: none
 }
 
 a {
   text-decoration: none;
   color: var(--primary);
-  transition: color .25s;
+  transition: color .25s
 }
 
 a:hover {
-  opacity: 0.75;
+  opacity: .75
 }
 
 h1 {
@@ -72,46 +85,78 @@ h1 {
   font-weight: 400;
   letter-spacing: .5rem;
   color: var(--emphasis);
-  margin-bottom: 0;
+  margin-bottom: 0
 }
 
 input,
 textarea {
-  outline: none;
-  font-family: 'Montserrat', sans-serif;
-  background: transparent;
+  outline: 0;
+  font-family: Montserrat, sans-serif;
+  background: 0 0;
   border: none;
-  padding: .5rem;
+  padding: .5rem
 }
 
 .loadingScreen {
-  display: none;
+  z-index: 1500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #154652;
-  z-index: 1500;
+  background-color: var(--background1);
+  transition: all .5s;
+}
+
+.loadingScreen p {
+  font-size: 3rem;
+  color: var(--default)
+}
+
+.loadingIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 3px solid var(--primary);
+  border-bottom: 3px solid var(--secondary);
+  animation: loading 1s infinite linear
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(360deg)
+  }
+
+  100% {
+    transform: rotate(0)
+  }
+}
+
+.loadingScreen.loaded {
+  transform: translateY(-100%)
 }
 
 [data-animation] {
   opacity: 0;
-  transition: 1s;
+  transition: 1s
 }
 
-[data-animation="left"] {
+[data-animation=left] {
   transform: translate3d(-50px, 0, 0)
 }
 
-[data-animation="right"] {
+[data-animation=right] {
   transform: translate3d(50px, 0, 0)
 }
 
-[data-animation="bottom"] {
+[data-animation=bottom] {
   transform: translate3d(0, 50px, 0)
 }
 
-[data-animation="arrow"] {
-  opacity: 1;
+[data-animation=arrow] {
+  opacity: 1
 }
 
 [data-animation].animationDone {
@@ -119,8 +164,8 @@ textarea {
   transform: translate3d(0, 0, 0)
 }
 
-[data-animation="arrow"].animationDone {
-  opacity: 0;
+[data-animation=arrow].animationDone {
+  opacity: 0
 }
 
 .portfolio-modal {
@@ -131,7 +176,7 @@ textarea {
   background-color: #000000dd;
   height: 100%;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000
 }
 
 .portfolio-modal span {
@@ -147,13 +192,13 @@ textarea {
   height: 40px;
   color: var(--emphasis);
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1000
 }
 
 .portfolio-modal span:hover {
   border-radius: 5px;
   background-color: #aaaaaa25;
-  border: 1px solid #aaa;
+  border: 1px solid #aaa
 }
 
 .portfolio-modal img {
@@ -164,7 +209,7 @@ textarea {
   border: 1px solid var(--primary);
   border-radius: 5px;
   width: 760px;
-  object-fit: cover;
+  object-fit: cover
 }
 
 .btn {
@@ -176,34 +221,34 @@ textarea {
   cursor: pointer;
   padding: .3rem 1rem;
   border: 1px solid var(--primary);
-  background: transparent;
+  background: 0 0;
   border-radius: 10px;
   backdrop-filter: blur(1px);
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: 700;
+  text-transform: uppercase
 }
 
 form .btn:hover {
-  opacity: 0.75;
+  opacity: .75
 }
 
 .hello {
   background-image: url(../img/wallpapers/circles.png);
   background-color: var(--background1);
   background-position: -300px;
-  background-size: cover;
+  background-size: cover
 }
 
 header {
   position: fixed;
   width: 100%;
   transition: all .25s;
-  z-index: 999;
+  z-index: 999
 }
 
 .fix {
   background-color: var(--header);
-  box-shadow: 5px 5px 5px var(--dark);
+  box-shadow: 5px 5px 5px var(--dark)
 }
 
 .header {
@@ -214,76 +259,76 @@ header {
   height: 80px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center
 }
 
 .logo {
   font-size: 2rem;
-  color: var(--default);
+  color: var(--default)
 }
 
 .logo span {
   color: var(--emphasis);
-  font-weight: bold;
+  font-weight: 700
 }
 
 .header .logo:hover {
-  animation: animeLogo .25s 2;
+  animation: animeLogo .25s 2
 }
 
 @keyframes animeLogo {
   0% {
-    transform: rotate(1deg);
+    transform: rotate(1deg)
   }
 
   50% {
-    transform: rotate(-1deg);
+    transform: rotate(-1deg)
   }
 
   100% {
-    transform: rotate(0);
+    transform: rotate(0)
   }
 }
 
 .header-menu ul {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center
 }
 
 .header-menu li a {
   text-transform: uppercase;
   font-size: .8rem;
   margin: 0 15px;
-  color: var(--default);
+  color: var(--default)
 }
 
 .header-menu li a.active {
-  color: var(--primary);
+  color: var(--primary)
 }
 
 .header-menu li a.active::after {
-  content: " {...}";
+  content:" {...}"
 }
 
 .header-cv {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 
 .header-cv img {
   width: 1.5rem;
-  margin-left: 6px;
+  margin-left: 6px
 }
 
 .percent {
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3BADCB, #954aea 25%, #4b8aff 50%, #01feff 100%);
+  background: linear-gradient(90deg, #3badcb, #954aea 25%, #4b8aff 50%, #01feff 100%);
   background-size: 300% 100%;
   animation: bgMove 5s linear infinite;
-  transition: .3s ease-out;
+  transition: .3s ease-out
 }
 
 .intro {
@@ -295,7 +340,7 @@ header {
   min-height: 450px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center
 }
 
 .intro-left {
@@ -304,42 +349,42 @@ header {
   align-items: flex-start;
   flex-direction: column;
   width: 500px;
-  margin-right: 30px;
+  margin-right: 30px
 }
 
 .intro-left h2 {
   color: var(--default);
   font-size: 1rem;
   margin-bottom: -30px;
-  font-weight: 400;
+  font-weight: 400
 }
 
 .intro-left h2 span {
   color: var(--primary);
-  margin: 0px 5px;
-  font-weight: 600;
+  margin: 0 5px;
+  font-weight: 600
 }
 
 .intro-left h2 img {
   width: 34px;
-  margin-bottom: -5px;
+  margin-bottom: -5px
 }
 
 .intro-left p {
   color: var(--sub);
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 300
 }
 
 .intro-left a {
-  margin: 40px 0;
+  margin: 40px 0
 }
 
 .intro-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 490px;
+  width: 490px
 }
 
 .intro-right img {
@@ -347,15 +392,15 @@ header {
   height: auto;
   border-radius: 90px 30px 90px 30px;
   border: 1px solid var(--tertiary);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
   opacity: .8;
   backdrop-filter: blur(3px);
-  transition: all .25s;
+  transition: all .25s
 }
 
 .intro-right img:hover {
   opacity: .85;
-  transform: scale(1.01);
+  transform: scale(1.01)
 }
 
 .arrowDown {
@@ -367,42 +412,43 @@ header {
   width: 100%;
   bottom: 15px;
   animation: arrowDown 1.5s infinite;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .arrowDown span {
   color: var(--sub);
-  font-size: 0.6rem;
+  font-size: .6rem;
   font-weight: 700;
-  margin-bottom: 3px;
+  margin-bottom: 3px
 }
 
 .arrowDown img {
-  width: 2rem;
+  width: 2rem
 }
 
 @keyframes arrowDown {
 
   0%,
   100% {
-    transform: translateY(3px);
+    transform: translateY(3px)
   }
 
   50% {
-    transform: translateY(-7px);
+    transform: translateY(-7px)
   }
 }
 
 .about {
-  background-color: var(--background2);
+  background-color: var(--background2)
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   letter-spacing: .3rem;
   color: var(--emphasis);
   padding-top: 4rem;
-  text-align: center;
+  text-align: center
 }
 
 .section-body {
@@ -412,21 +458,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding: 60px 0;
+  padding: 60px 0
 }
 
 .section-unique {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 300px;
+  height: 300px
 }
 
 .section-unique img {
   height: 100%;
   border-radius: 999px;
   border: 2px solid var(--header);
-  background-color: var(--background1);
+  background-color: var(--background1)
 }
 
 .section-left {
@@ -434,36 +480,36 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 
 .about-box {
   width: 340px;
   height: 120px;
   background-color: var(--background1);
-  margin: 5px 0px;
+  margin: 5px 0;
   padding: 30px;
   cursor: pointer;
   transition: all .25s;
-  border-radius: 5px;
+  border-radius: 5px
 }
 
 .about-box.selected {
-  box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.3);
-  transform: scale(1.03);
+  box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, .3);
+  transform: scale(1.03)
 }
 
 .about-box.selected .about-box-title {
   color: var(--primary);
-  font-weight: bold;
+  font-weight: 700
 }
 
 .about-box.selected .about-box-title h3 {
-  color: var(--primary);
+  color: var(--primary)
 }
 
 .about-box.selected svg {
-  fill: var(--primary);
+  fill: var(--primary)
 }
 
 .about-box-title h3 {
@@ -472,16 +518,16 @@ header {
   font-size: 1.5rem;
   margin-bottom: 10px;
   transition: all .25s;
-  margin: 0;
+  margin: 0
 }
 
 .about-box svg {
   float: right;
-  fill: var(--sub);
+  fill: var(--sub)
 }
 
 .about-box-desc {
-  color: var(--sub);
+  color: var(--sub)
 }
 
 .section-right {
@@ -489,92 +535,90 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 30px;
+  margin-left: 30px
 }
 
 .animation {
-  opacity: 0;
+  opacity: 0
 }
 
 .about-title {
   color: var(--default);
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem
 }
 
 .about-type {
   color: var(--primary);
-  font-weight: bold;
+  font-weight: 700
 }
-
 
 .about-desc {
   color: var(--sub);
   display: flex;
   flex-wrap: wrap;
-  max-width: 400px;
+  max-width: 400px
 }
-
 
 .about span.blink {
   animation: blink 2s infinite;
-  color: var(--primary);
+  color: var(--primary)
 }
 
 @keyframes blink {
 
   0%,
   100% {
-    opacity: 1;
+    opacity: 1
   }
 
   50% {
-    opacity: 0;
+    opacity: 0
   }
 }
 
 .about-desc .infos {
-  display: none;
+  display: none
 }
 
 .about-desc .skills {
-  display: none;
+  display: none
 }
 
 .about-desc .skills ul {
   padding: 0;
-  width: 100%;
+  width: 100%
 }
 
 .about-desc .skills li {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem
 }
 
 .about-desc .skills li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0
 }
 
 .about-desc .skills li h2 {
   padding: 0;
   margin: .5rem 0;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.2rem
 }
 
 .about-desc .skills li .progressBar {
   width: 100%;
   height: 3px;
-  background-color: var(--secondary);
+  background-color: var(--secondary)
 }
 
 .about-desc .skills li .progressBar .progress {
   height: 3px;
-  background: linear-gradient(90deg, #3BADCB, #4a6fea 25%, #4b8aff 50%, #01feff 100%);
+  background: linear-gradient(90deg, #3badcb, #4a6fea 25%, #4b8aff 50%, #01feff 100%);
   background-size: 300% 100%;
   display: flex;
   justify-content: end;
   transition: all 1s linear;
-  animation: bgMove 5s linear infinite;
+  animation: bgMove 5s linear infinite
 }
 
 @keyframes bgMove {
@@ -600,9 +644,9 @@ header {
   height: 1.5rem;
   border-radius: 8px;
   color: var(--default);
-  font-weight: bold;
+  font-weight: 700;
   font-size: .8rem;
-  padding-top: 3px;
+  padding-top: 3px
 }
 
 .about-desc .skills li .progressBar .progress span::after {
@@ -614,43 +658,41 @@ header {
   height: 0;
   border-left: .5rem solid transparent;
   border-right: .5rem solid transparent;
-  border-top: .5rem solid var(--secondary);
+  border-top: .5rem solid var(--secondary)
 }
 
 .about-desc-item {
   margin: 10px 0;
-  width: 180px;
+  width: 180px
 }
 
 .about-desc-item p {
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: .2rem;
   display: flex;
-  align-items: center;
-  /* width: 20%;
-  border-bottom: 1px solid var(--secondary); */
+  align-items: center
 }
 
 .about-desc-item p img {
   width: 1.2rem;
   margin-right: .2rem;
-  display: inline;
+  display: inline
 }
 
 .about-desc-item span {
-  margin: 0;
+  margin: 0
 }
 
 .stacks {
   background-color: var(--background3);
-  border-top: 1px solid var(--background1);
+  border-top: 1px solid var(--background1)
 }
 
 .stacks .section-body {
   color: var(--primary);
   padding: 30px 0;
   max-width: var(--maxContainer);
-  width: var(--container);
+  width: var(--container)
 }
 
 .stack-display {
@@ -660,7 +702,7 @@ header {
   align-items: center;
   justify-content: space-between;
   overflow-x: hidden;
-  transition: all 1s;
+  transition: all 1s
 }
 
 .stack {
@@ -669,22 +711,21 @@ header {
   margin: 0 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 
 .stack img {
   height: 80%;
   width: 80%;
-  filter: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(1911%) hue-rotate(146deg) brightness(90%) contrast(84%);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(1911%) hue-rotate(146deg) brightness(90%) contrast(84%)
 }
 
 .stack img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1)
 }
 
 .portfolio {
   background-color: var(--background4);
-  border-top: 1px solid var(--background1);
   background-image: url(../img/wallpapers/graphy.png);
 }
 
@@ -692,13 +733,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .portfolio .section-title {
   color: var(--header);
   font-weight: 500;
-  margin: 0;
+  margin: 0
 }
 
 .portfolio-grid {
@@ -708,12 +749,12 @@ header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap-reverse;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse
 }
 
 .grid-item-container {
   width: 80%;
-  padding: 15px 0;
+  padding: 15px 0
 }
 
 .grid-item {
@@ -727,17 +768,17 @@ header {
   background-color: var(--background2);
   padding: 1px;
   border-radius: 5px;
-  box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, .5)
 }
 
 .grid-item img {
   width: 100%;
   border-radius: 5px 5px 0 0;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .grid-item img:hover {
-  opacity: .9;
+  opacity: .9
 }
 
 .grid-item-title {
@@ -746,46 +787,46 @@ header {
   align-items: center;
   width: 100%;
   border-bottom: 1px solid #aaaaaa50;
-  padding-bottom: 3px;
+  padding-bottom: 3px
 }
 
 .grid-item-title p {
   color: var(--default);
   font-size: 1.5rem;
-  flex: 1;
+  flex: 1
 }
 
 .grid-item-stacks {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center
 }
 
 .grid-item-stack {
   width: 20px;
-  margin: 0 5px;
+  margin: 0 5px
 }
 
 .grid-item-stack img {
   width: 100%;
-  filter: invert(71%) sepia(1%) saturate(167%) hue-rotate(129deg) brightness(96%) contrast(90%);
+  filter: invert(71%) sepia(1%) saturate(167%) hue-rotate(129deg) brightness(96%) contrast(90%)
 }
 
 .grid-item-stack img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1)
 }
 
 .grid-item-desc {
   color: var(--sub);
   margin: 20px 0;
-  width: 100%;
+  width: 100%
 }
 
 .grid-item-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100%
 }
 
 .grid-item-buttons a {
@@ -797,54 +838,54 @@ header {
   border-radius: 999px;
   padding: 5px;
   flex: 1;
-  margin: 0px 10px;
+  margin: 0 10px
 }
 
 .grid-item-buttons img {
   width: 20px;
-  margin-right: 5px;
+  margin-right: 5px
 }
 
 .divider {
   height: 3px;
   width: 100%;
-  background: linear-gradient(90deg, #3BADCB, #954aea 25%, #4b8aff 50%, #01feff 100%);
+  background: linear-gradient(90deg, #3badcb, #954aea 25%, #4b8aff 50%, #01feff 100%);
   background-size: 300% 100%;
-  animation: bgMove 5s linear infinite;
+  animation: bgMove 5s linear infinite
 }
 
 footer {
-  background-color: #06060a;
+  background-color: #06060a
 }
 
 .footer {
-  background-color: var(--header);
+  background-color: var(--header)
 }
 
 .footer .section-body {
   align-items: center;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .network {
   margin: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 
 .network img {
   width: 24px;
-  margin: 0 3px;
+  margin: 0 3px
 }
 
 .footer-email {
   margin-top: 40px;
-  width: 80%;
+  width: 80%
 }
 
 form {
-  width: 100%;
+  width: 100%
 }
 
 .form-line {
@@ -852,12 +893,12 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px 0
 }
 
 .form-line button {
   width: 60%;
-  padding: 10px;
+  padding: 10px
 }
 
 .form-line input,
@@ -866,12 +907,12 @@ form {
   border-bottom: 1px solid var(--secondary);
   margin: 0 10px;
   color: var(--default);
-  transition: all .25s;
+  transition: all .25s
 }
 
 .form-line input:focus,
 .form-line textarea:focus {
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary)
 }
 
 .footer-infos {
@@ -882,7 +923,7 @@ form {
   color: var(--sub);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center
 }
 
 .footer-left,
@@ -892,60 +933,60 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 0 10px
 }
 
 .footer-right {
-  align-items: center;
+  align-items: center
 }
 
 .footer-contact {
   display: flex;
   align-items: center;
   margin: 20px 0;
-  font-size: 1.2rem;
+  font-size: 1.2rem
 }
 
 .footer-contact img {
   margin: 0 20px;
   background-color: var(--secondary);
   border-radius: 999px;
-  padding: 5px;
+  padding: 5px
 }
 
 .courses {
-  margin-top: 10px;
+  margin-top: 10px
 }
 
 .courses a {
-  color: var(--sub);
+  color: var(--sub)
 }
 
 .course:hover {
-  opacity: .9;
+  opacity: .9
 }
 
 .course {
   background-color: #11161d05;
-  border: 1px solid #3BADCB15;
+  border: 1px solid #3baDCB15;
   padding: 5px;
   border-radius: 5px;
   margin: 5px 0;
-  width: 360px;
+  width: 360px
 }
 
 .course-title {
-  font-weight: bold;
+  font-weight: 700
 }
 
 .course-hours {
   font-size: .9rem;
   float: right;
-  font-weight: 300;
+  font-weight: 300
 }
 
 .course-desc {
-  font-size: .8rem;
+  font-size: .8rem
 }
 
 .copyright {
@@ -953,99 +994,97 @@ form {
   max-width: var(--maxContainer);
   color: var(--sub);
   padding: .5rem;
-  margin: auto;
+  margin: auto
 }
 
-/* MOBILE */
 .mobile-modal {
   display: none;
   position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: #000000dd;
-  z-index: 500;
+  z-index: 500
 }
 
 .header-mobile {
   display: none;
   transform: translate3d(100vw, 0, 0);
-
-  margin: 83px 0px;
+  margin: 83px 0;
   right: 0;
   min-width: 40vw;
   height: calc(100vh - 83px);
   position: fixed;
   background-color: var(--header);
   z-index: 999;
-  transition: all .3s;
+  transition: all .3s
 }
 
 .header-mobile.active {
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0)
 }
 
 .header-mobile p {
   color: var(--default);
   font-size: 3rem;
-  font-weight: bold;
-  margin: 30px auto;
+  font-weight: 700;
+  margin: 30px auto
 }
 
 .header-mobile ul {
-  padding: 50px;
+  padding: 50px
 }
 
 .header-mobile ul li {
-  margin: 20px 0;
+  margin: 20px 0
 }
 
 .header-mobile ul li a {
   color: var(--sub);
   font-size: 2rem;
-  margin: 20px;
+  margin: 20px
 }
 
 .header-mobile ul li a.active {
-  color: var(--primary);
+  color: var(--primary)
 }
 
 .header-mobile .btn {
   width: 60%;
-  margin: auto;
+  margin: auto
 }
 
 .menu-opener {
   display: none;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .menu-opener--hamb,
-.menu-opener--hamb::before,
-.menu-opener--hamb::after {
+.menu-opener--hamb::after,
+.menu-opener--hamb::before {
   height: 4px;
   width: 32px;
   background-color: var(--primary);
   border-radius: 5px;
-  transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out
 }
 
-.menu-opener--hamb::before,
-.menu-opener--hamb::after {
+.menu-opener--hamb::after,
+.menu-opener--hamb::before {
   content: "";
-  position: absolute;
+  position: absolute
 }
 
 .menu-opener--hamb::before {
-  transform: translateY(-10px);
+  transform: translateY(-10px)
 }
 
 .menu-opener--hamb::after {
-  transform: translateY(10px);
+  transform: translateY(10px)
 }
 
 .menu-opener.open .menu-opener--hamb {
   transform: translateX(-50px);
-  background: transparent;
+  background: 0 0
 }
 
 .menu-opener.open .menu-opener--hamb::before {
@@ -1056,71 +1095,69 @@ form {
   transform: rotate(-45deg) translate(35px, 35px)
 }
 
-
-@media (max-width: 770px) {
-
+@media (max-width:770px) {
   .portfolio-modal img {
-    width: 95%;
+    width: 95%
   }
 
   .portfolio-modal-container {
     width: 95%;
-    max-height: 95%;
+    max-height: 95%
   }
 
   .hello {
-    background-position: center;
+    background-position: center
   }
 
   .header-menu ul {
-    display: none;
+    display: none
   }
 
   .menu-opener {
-    display: block;
+    display: block
   }
 
   .header-cv {
-    display: none;
+    display: none
   }
 
   .mobile-modal.active {
-    display: block;
+    display: block
   }
 
   .header-mobile {
     display: flex;
-    flex-direction: column;
+    flex-direction: column
   }
 
   .intro {
     flex-direction: column-reverse;
-    height: 100%;
+    height: 100%
   }
 
   .intro-right {
     margin-bottom: 30px;
-    width: 90%;
+    width: 90%
   }
 
   .intro-right img {
     width: 90%;
-    height: auto;
+    height: auto
   }
 
   .intro-left {
-    width: initial;
+    width: initial
   }
 
   .section-left {
     flex: none;
     align-items: flex-start;
-    width: 100px;
+    width: 100px
   }
 
   .section-right {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 20px
   }
 
   .about-box {
@@ -1129,7 +1166,7 @@ form {
     padding: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
   }
 
   .about-box-title {
@@ -1137,78 +1174,78 @@ form {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row
   }
 
   .about-box svg {
-    float: none;
+    float: none
   }
 
   .about-box-title h3 {
-    font-size: 1rem;
+    font-size: 1rem
   }
 
   .about-box-desc {
-    display: none;
+    display: none
   }
 
   .about-desc {
-    max-width: 500px;
+    max-width: 500px
   }
 
   .about-desc-item {
-    width: 50%;
+    width: 50%
   }
 
   .footer-infos {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width:500px) {
   html {
-    font-size: 12px;
+    font-size: 12px
   }
 
   .intro-left {
-    margin: 15px;
+    margin: 15px
   }
 
   [data-stack="5"],
   [data-stack="6"] {
-    display: none;
+    display: none
   }
 
   .about-title {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
   }
 
   .about-desc-item {
     width: 100%;
-    margin: 0;
+    margin: 0
   }
 
   .about-desc .skills li .progressBar .progress span {
-    position: inherit;
+    position: inherit
   }
 
   .about-desc .skills li .progressBar .progress span::after {
-    display: none;
+    display: none
   }
 
   .course {
-    width: 100%;
+    width: 100%
   }
 
   .form-line {
     flex-direction: column;
-    margin: 0;
+    margin: 0
   }
 
+  .form-line .btn,
   .form-line input,
-  .form-line textarea,
-  .form-line .btn {
+  .form-line textarea {
     margin: 10px 0;
-    width: 100%;
+    width: 100%
   }
 }

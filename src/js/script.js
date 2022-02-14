@@ -15,20 +15,18 @@ document.querySelectorAll('[data-cv]').forEach(a => {
 //       LISTENERS       //
 // ===================== //
 function screenInit() {
-  if (document.readyState == 'interactive') {
+  if (document.readyState == 'complete') {
     clearInterval(loadingScreen);
-    console.log('Completo')
+    document.querySelector('.loadingScreen').classList.add('loaded');
+    setTimeout(() => {
+      document.querySelector('.loadingScreen').style.display = 'none';
+    }, 300)
   }
 }
 
-screenInit();
 let loadingScreen = setInterval(() => {
   screenInit();
-}, 500)
-
-// while (document.readyState == 'loading') {
-
-// }
+}, 250)
 
 window.addEventListener('scroll', () => {
   scrollPercent();
@@ -94,13 +92,13 @@ function scrollPercent() {
         document.querySelectorAll(`[data-header="${divPos[0].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else if (i === headerItems - 1) {
-      if (windowPos >= divPos[headerItems - 1].pos + 500) {
+      if (windowPos >= divPos[headerItems - 1].pos - 80) {
         document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
         document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else {
-      if (windowPos >= divPos[i].pos - 80 && windowPos < divPos[i + 1].pos + 500) {
+      if (windowPos >= divPos[i].pos - 80 && windowPos < divPos[i + 1].pos - 80) {
         document.querySelectorAll(`[data-header="${divPos[i].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
         document.querySelectorAll(`[data-header="${divPos[i].name}"]`).forEach((i) => i.classList.remove('active'))
