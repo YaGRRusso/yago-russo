@@ -457,6 +457,12 @@ header {
   text-align: center
 }
 
+.section-body p {
+  display: block;
+  margin-top: 0;
+  color: var(--default);
+}
+
 .section-body {
   max-width: var(--maxContainer);
   width: var(--container);
@@ -999,7 +1005,7 @@ form {
 .copyright {
   width: var(--container);
   max-width: var(--maxContainer);
-  color: var(--sub);
+  color: #aaa;
   padding: .5rem;
   margin: auto
 }
