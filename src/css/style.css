@@ -343,7 +343,7 @@ header {
   width: var(--container);
   margin: auto;
   height: calc(95vh - 45px);
-  min-height: 450px;
+  min-height: 550px;
   display: flex;
   justify-content: space-between;
   align-items: center
