@@ -15,8 +15,8 @@ document.querySelectorAll('[data-cv]').forEach(a => {
 //       LISTENERS       //
 // ===================== //
 if (localStorage.getItem('theme') != 'dark') {
-  document.querySelector('html').classList.add('dark-mode');
-  document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.add('dark-mode'));
+  document.querySelector('html').classList.add('light-mode');
+  document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.add('light-mode'));
 }
 
 function screenInit() {
@@ -41,8 +41,8 @@ document.querySelectorAll('.theme-switcher').forEach(item => item.addEventListen
     localStorage.setItem('theme', 'dark');
   }
 
-  document.querySelector('html').classList.toggle('dark-mode');
-  document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.toggle('dark-mode'));
+  document.querySelector('html').classList.toggle('light-mode');
+  document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.toggle('light-mode'));
 }));
 
 window.addEventListener('scroll', () => {
@@ -281,8 +281,7 @@ function portfolioWrite() {
     sites += `
 
     <div class="grid-item" data-animation="bottom">
-
-      <img src="./media/sites/${portfolio[i].img ? portfolio[i].img : 'site'}.png" alt="Imagem" class="grid-item-img">
+      <img src="./media/sites/${portfolio[i].img ? portfolio[i].img : 'skeleton'}.png" alt="Imagem" class="grid-item-img">
       <div class="grid-item-container">
         <div class="grid-item-title">
           <p>${portfolio[i].name}</p>
@@ -295,8 +294,8 @@ function portfolioWrite() {
           ${portfolio[i].desc}
         </div>
         <div class="grid-item-buttons">
-          <a href="${portfolio[i].github}" target="_blank"><img src="./src/img/social/github.svg" alt="github">Código</a>
-          <a href="${portfolio[i].site}" target="_blank"><img src="./src/img/social/site.svg" alt="site">Site</a>
+          <a href="${portfolio[i].github ? portfolio[i].github : 'https://yagrrusso.github.io'}" target="_blank"><img src="./src/img/social/github.svg" alt="github">Código</a>
+          <a href="${portfolio[i].site ? portfolio[i].site : 'https://github.com/YaGRRusso'}" target="_blank"><img src="./src/img/social/site.svg" alt="site">Site</a>
         </div>
       </div>
 
@@ -313,16 +312,19 @@ function portfolioZoom() {
     item.addEventListener('click', (ev) => {
       document.querySelector('.portfolio-modal').style.display = 'block';
       document.querySelector('.portfolio-modal img').src = ev.target.src
+      document.querySelector('body').style.overflowY = 'hidden'
     })
   })
 }
 
 document.querySelector('.portfolio-modal span').addEventListener('click', () => {
   document.querySelector('.portfolio-modal').style.display = 'none';
+  document.querySelector('body').style.overflowY = 'auto'
 })
 
 document.querySelector('.portfolio-modal').addEventListener('click', (item) => {
   item.currentTarget.style.display = 'none';
+  document.querySelector('body').style.overflowY = 'auto'
 })
 
 
@@ -385,7 +387,7 @@ function courseWrite() {
 scrollAnimation();
 InfoWrite();
 aboutWrite('about');
-typeWriter();
+setTimeout(typeWriter, 1000);
 stackWrite();
 portfolioWrite();
 footerWrite();

@@ -19,14 +19,14 @@
   --svgColorSec: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(1911%) hue-rotate(146deg) brightness(90%) contrast(84%);
 }
 
-.dark-mode:root {
+.light-mode:root {
   --header: #f2f6ff;
   --background1: #eceff5;
   --background2: #e2e6ec;
   --background3: #d2dae7;
   --background4: #b6c6e3;
-  --primary: #147c96;
-  --secondary: #147c9625;
+  --primary: #0d6d85;
+  --secondary: #0d6d8525;
   --tertiary: #154652;
   --emphasis: #000000;
   --default: #000001;
@@ -34,7 +34,6 @@
   --dark: #00000030;
   --svgColor: brightness(0);
   --svgColorSec: brightness(0);
-
 }
 
 ::-webkit-scrollbar {
@@ -181,7 +180,8 @@ textarea {
   background-color: #000000dd;
   height: 100%;
   width: 100%;
-  z-index: 1000
+  z-index: 1000;
+  overflow-x: auto;
 }
 
 .portfolio-modal span {
@@ -208,13 +208,12 @@ textarea {
 
 .portfolio-modal img {
   position: absolute;
-  top: 50%;
+  margin: 50px 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   border: 1px solid var(--primary);
   border-radius: 5px;
-  width: 760px;
-  object-fit: cover
+  max-width: 85%;
 }
 
 .btn {
@@ -233,7 +232,7 @@ textarea {
   text-transform: uppercase
 }
 
-html.dark-mode .btn img {
+html.light-mode .btn img {
   filter: brightness(0);
 }
 
@@ -268,7 +267,7 @@ form .btn:hover {
   transition: transform .25s;
 }
 
-.theme-switcher.dark-mode::before {
+.theme-switcher.light-mode::before {
   background-image: url(../img/icons/light.svg);
   transform: translateX(100%) rotate(90deg);
 }
@@ -437,13 +436,9 @@ header {
 }
 
 .intro-right img {
-  width: 70%;
+  width: 80%;
   height: auto;
-  border-radius: 90px 30px 90px 30px;
-  border: 1px solid var(--tertiary);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
   opacity: .8;
-  backdrop-filter: blur(3px);
   transition: all .25s
 }
 
@@ -817,6 +812,9 @@ header {
 
 .grid-item img {
   width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: 0% 0%;
   border-radius: 5px 5px 0 0;
   cursor: pointer;
 }
@@ -863,7 +861,8 @@ header {
 .grid-item-desc {
   color: var(--sub);
   margin: 20px 0;
-  width: 100%
+  width: 100%;
+  height: 60px;
 }
 
 .grid-item-buttons {
@@ -1142,10 +1141,6 @@ form {
 }
 
 @media (max-width:770px) {
-  .portfolio-modal img {
-    width: 95%
-  }
-
   .portfolio-modal-container {
     width: 95%;
     max-height: 95%

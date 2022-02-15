@@ -284,7 +284,7 @@ let social = [{
 
 let portfolio = [{
     name: 'Cactus E-Commerce',
-    desc: 'Site para catálogo, controle de estoque e encomendas de roupas',
+    desc: 'Trabalho de conclusão de curso (TCC). Sistema de catálogo, controle de estoque, encomendas de roupas e autenticação de usuário.',
     site: 'https://cactusveste.000webhostapp.com/',
     github: 'https://github.com/YaGRRusso/tcc-cactus-e-commerce',
     img: 'cactus',
@@ -298,22 +298,22 @@ let portfolio = [{
     ]
   },
   {
-    name: 'Portfolio 2',
-    desc: 'portfolio descrição numero 2 para usar como exemplo em grid do site',
-    link: 'https://google.com',
-    img: '',
+    name: 'Pizzas',
+    desc: 'Projeto de delivery de pizzas gerado com JS baseado em um array de dados.',
+    site: 'https://yagrrusso.github.io/pizza-delivery/',
+    github: 'https://github.com/YaGRRusso/pizza-delivery',
+    img: 'pizzas',
     stacks: [
       'html5',
       'css3',
-      'javascript',
-      'react',
-      'sass'
+      'javascript'
     ]
   },
   {
     name: 'Portfolio 3',
-    desc: 'portfolio descrição numero 3 para usar como exemplo em grid do site',
-    link: 'https://google.com',
+    desc: 'portfolio descrição numero 3 para usar como exemplo em grid do site.',
+    site: '',
+    github: '',
     img: '',
     stacks: [
       'html5',
@@ -325,8 +325,9 @@ let portfolio = [{
   },
   {
     name: 'Portfolio 4',
-    desc: 'portfolio descrição numero 4 para usar como exemplo em grid do site',
-    link: 'https://google.com',
+    desc: 'portfolio descrição numero 4 para usar como exemplo em grid do site.',
+    site: '',
+    github: '',
     img: '',
     stacks: [
       'html5',
@@ -338,8 +339,9 @@ let portfolio = [{
   },
   {
     name: 'Portfolio 5',
-    desc: 'portfolio descrição numero 5 para usar como exemplo em grid do site',
-    link: 'https://google.com',
+    desc: 'portfolio descrição numero 5 para usar como exemplo em grid do site.',
+    site: '',
+    github: '',
     img: '',
     stacks: [
       'html5',
