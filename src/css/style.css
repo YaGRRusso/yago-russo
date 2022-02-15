@@ -250,6 +250,7 @@ form .btn:hover {
   width: 50px;
   padding: 2px 4px;
   backdrop-filter: blur(1px);
+  cursor: pointer;
 }
 
 .theme-switcher::before {

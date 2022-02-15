@@ -14,6 +14,11 @@ document.querySelectorAll('[data-cv]').forEach(a => {
 // ===================== //
 //       LISTENERS       //
 // ===================== //
+if (localStorage.getItem('theme') != 'dark') {
+  document.querySelector('html').classList.add('dark-mode');
+  document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.add('dark-mode'));
+}
+
 function screenInit() {
   if (document.readyState == 'complete') {
     clearInterval(loadingScreen);
@@ -29,6 +34,13 @@ let loadingScreen = setInterval(() => {
 }, 250)
 
 document.querySelectorAll('.theme-switcher').forEach(item => item.addEventListener('click', () => {
+
+  if (localStorage.getItem('theme') == 'dark') {
+    localStorage.setItem('theme', 'light');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+
   document.querySelector('html').classList.toggle('dark-mode');
   document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.toggle('dark-mode'));
 }));
