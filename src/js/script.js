@@ -28,6 +28,11 @@ let loadingScreen = setInterval(() => {
   screenInit();
 }, 250)
 
+document.querySelectorAll('.theme-switcher').forEach(item => item.addEventListener('click', () => {
+  document.querySelector('html').classList.toggle('dark-mode');
+  document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.toggle('dark-mode'));
+}));
+
 window.addEventListener('scroll', () => {
   scrollPercent();
   scrollAnimation();
