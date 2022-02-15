@@ -221,7 +221,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--default);
+  color: var(--sub);
   cursor: pointer;
   padding: .1rem .7rem;
   border: 1px solid var(--sub);
@@ -255,7 +255,7 @@ form .btn:hover {
 .theme-switcher::before {
   content: "";
   display: flex;
-  background-color: var(--default);
+  background-color: var(--primary);
   background-image: url(../img/icons/dark.svg);
   background-size: 80%;
   background-repeat: no-repeat;
