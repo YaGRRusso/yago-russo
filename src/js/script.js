@@ -58,7 +58,7 @@ document.querySelectorAll('section').forEach(item => {
 })
 let headerItems = divPos.length;
 
-document.querySelectorAll('nav a').forEach((item, index) => {
+document.querySelectorAll('nav li a').forEach((item, index) => {
   item.addEventListener('click', (ev) => {
     ev.preventDefault();
     window.scrollTo(0, divPos[indexRepeat[index]].pos - 80)
