@@ -642,6 +642,7 @@ header {
 }
 
 .about-desc .skills li .progressBar .progress {
+  width: 10%;
   height: 3px;
   background: linear-gradient(90deg, #3badcb, #4a6fea 25%, #4b8aff 50%, #01feff 100%);
   background-size: 300% 100%;
@@ -670,12 +671,13 @@ header {
   position: relative;
   background-color: var(--secondary);
   top: -30px;
-  padding: 0 8px;
-  height: 1.5rem;
+  right: -30px;
+  padding: 0 6px;
+  height: 1.4rem;
   border-radius: 8px;
   color: var(--default);
   font-weight: 700;
-  font-size: .8rem;
+  font-size: .75rem;
   padding-top: 3px
 }
 

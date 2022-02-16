@@ -152,11 +152,20 @@ function InfoWrite() {
 
   // INICIO SKILLS
   skills.stacks.forEach(item => {
+    let level = ''
+    if (item.level > 80) {
+      level = 'Avançado';
+    } else if (item.level > 40 && item.level < 79) {
+      level = 'Intermediário';
+    } else {
+      level = 'Básico';
+    }
+
     list += `
     <li>
       <h2>${item.name}</h2>
       <div class="progressBar">
-        <div class="progress" style="width: 10%"><span>${item.level}%</span></div>
+        <div class="progress" data-level="${item.level}"><span>${level}</span></div>
       </div>
     </li>`
   })
@@ -228,8 +237,8 @@ function typeWriter() {
 function animeBar() {
   setTimeout(() => {
     document.querySelectorAll('.progressBar .progress').forEach(bar => {
-      let percent = bar.querySelector('span').innerHTML;
-      bar.style.width = percent;
+      let percent = bar.dataset.level;
+      bar.style.width = `${percent}%`
     })
   }, 400);
 }

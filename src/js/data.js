@@ -239,23 +239,23 @@ let skills = {
   ],
   stacks: [{
       name: 'full-stack',
-      level: 85
+      level: 65
     },
     {
       name: 'back-end',
-      level: 65
+      level: 40
     },
     {
       name: 'front-end',
-      level: 95
+      level: 85
     },
     {
       name: 'mobile',
-      level: 65
+      level: 60
     },
     {
       name: 'design',
-      level: 95
+      level: 75
     },
   ]
 }
