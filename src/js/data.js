@@ -204,8 +204,8 @@ let skills = {
     'postgresql',
     'mysql',
     'firebase',
-    'graphql',
-    'mongodb',
+    // 'graphql',
+    // 'mongodb',
 
     // Tools
     'git',

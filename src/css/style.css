@@ -722,9 +722,11 @@ header {
 
 .stacks .section-body {
   color: var(--primary);
-  padding: 30px 0;
+  padding: 0;
+  padding-top: 30px;
+  flex-direction: column;
   max-width: var(--maxContainer);
-  width: var(--container)
+  width: var(--container);
 }
 
 .stack-display {
@@ -738,8 +740,8 @@ header {
 }
 
 .stack {
-  height: 50px;
-  width: 50px;
+  height: 4rem;
+  width: 4rem;
   margin: 0 20px;
   display: flex;
   justify-content: center;
@@ -754,6 +756,58 @@ header {
 
 .stack img:hover {
   transform: scale(1.1)
+}
+
+.all-stacks-display {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  row-gap: 10px;
+  justify-items: center;
+  justify-content: space-between;
+  transition: .5s ease-out;
+  height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.all-stacks-display p {
+  grid-column: span 6;
+  font-size: 1.2rem;
+  color: var(--sub);
+}
+
+.all-stacks-display .stack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: .5rem;
+  text-transform: uppercase;
+  color: var(--sub);
+  font-weight: bold;
+}
+
+.all-stacks-display.active {
+  border-top: 1px solid var(--secondary);
+  padding-top: 20px;
+  margin-top: 50px;
+  height: auto;
+  transform: scaleY(1);
+}
+
+.stacks-chevron {
+  margin: 0 auto 10px auto;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.stacks-chevron img {
+  filter: var(--svgColor);
+  padding: 0 50px;
+}
+
+.stacks-chevron.active {
+  transform: rotate(180deg);
 }
 
 .portfolio {
@@ -1238,6 +1292,14 @@ form {
     width: 50%
   }
 
+  .all-stacks-display {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  .all-stacks-display p {
+    grid-column: span 5;
+  }
+
   .footer-infos {
     flex-direction: column-reverse
   }
@@ -1272,6 +1334,14 @@ form {
 
   .about-desc .skills li .progressBar .progress span::after {
     display: none
+  }
+
+  .all-stacks-display {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .all-stacks-display p {
+    grid-column: span 3;
   }
 
   .course {

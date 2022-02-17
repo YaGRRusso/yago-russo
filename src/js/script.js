@@ -274,6 +274,17 @@ function hide() {
   }, 1000)
 }
 
+function allStacksWrite() {
+  for (let i = 0; i < skills.hard.length; i++) {
+    document.querySelector('.all-stacks-display').innerHTML += `<div class="stack"><img src="./src/img/stacks/${skills.hard[i]}.svg" alt="${skills.hard[i]}" title="${skills.hard[i]}">${skills.hard[i]}</div>`
+  }
+}
+
+document.querySelector('.stacks-chevron').addEventListener('click', (item) => {
+  item.currentTarget.classList.toggle('active');
+  document.querySelector('.all-stacks-display').classList.toggle('active');
+})
+
 // ===================== //
 //   Section PORTFOLIO   //
 // ===================== //
@@ -398,6 +409,7 @@ InfoWrite();
 aboutWrite('about');
 setTimeout(typeWriter, 1000);
 stackWrite();
+allStacksWrite();
 portfolioWrite();
 footerWrite();
 courseWrite();
