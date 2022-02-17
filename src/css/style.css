@@ -791,6 +791,7 @@ header {
   border-top: 1px solid var(--secondary);
   padding-top: 20px;
   margin-top: 50px;
+  margin-bottom: 20px;
   height: auto;
   transform: scaleY(1);
 }
@@ -798,16 +799,30 @@ header {
 .stacks-chevron {
   margin: 0 auto 10px auto;
   cursor: pointer;
-  transition: all .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stacks-chevron span {
+  font-size: .6rem;
+  color: var(--sub);
+  text-transform: uppercase;
 }
 
 .stacks-chevron img {
   filter: var(--svgColor);
-  padding: 0 50px;
+  margin-top: -5px;
+  transition: all .5s;
 }
 
-.stacks-chevron.active {
+.stacks-chevron.active img {
   transform: rotate(180deg);
+}
+
+.stacks-chevron.active span {
+  display: none;
 }
 
 .portfolio {
