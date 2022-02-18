@@ -210,9 +210,9 @@ textarea {
   margin: 50px 0;
   left: 50%;
   transform: translate(-50%, 0);
-  border: 1px solid var(--primary);
+  border: 1px solid var(--secondary);
   border-radius: 5px;
-  max-width: 85%;
+  max-width: 90%;
 }
 
 .btn {
@@ -1357,6 +1357,11 @@ form {
 
   .all-stacks-display p {
     grid-column: span 3;
+  }
+
+
+  .portfolio-modal img {
+    max-width: 97%;
   }
 
   .course {

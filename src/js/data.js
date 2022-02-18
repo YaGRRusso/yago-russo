@@ -193,10 +193,10 @@ let skills = {
     'react',
     'jquery',
     'redux',
-    'nextjs',
+    // 'nextjs',
     'bootstrap',
     'tailwind',
-    'nodejs',
+    // 'nodejs',
     'sql',
     'api',
 
