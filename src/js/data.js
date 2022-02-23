@@ -199,6 +199,7 @@ let skills = {
     // 'nodejs',
     'sql',
     'api',
+    'jest',
 
     // Database
     'postgresql',
@@ -298,6 +299,18 @@ let portfolio = [{
     ]
   },
   {
+    name: 'React + Rest API',
+    desc: 'Integração React com API JsonPlaceholder e React Router.',
+    site: 'https://dreamy-hermann-67535c.netlify.app/',
+    github: 'https://github.com/YaGRRusso/album-react',
+    img: 'react-api',
+    stacks: [
+      'react',
+      'api',
+      'tailwind'
+    ]
+  },
+  {
     name: 'Pizzas',
     desc: 'Projeto de delivery de pizzas gerado com JS baseado em um array de dados.',
     site: 'https://yagrrusso.github.io/pizza-delivery/',
@@ -310,45 +323,25 @@ let portfolio = [{
     ]
   },
   {
-    name: 'Portfolio 3',
-    desc: 'portfolio descrição numero 3 para usar como exemplo em grid do site.',
-    site: '',
-    github: '',
-    img: '',
+    name: 'AWAX',
+    desc: 'Landing page criada com HTML e CSS.',
+    site: 'https://yagrrusso.github.io/awax/',
+    github: 'https://github.com/YaGRRusso/awax',
+    img: 'awax',
     stacks: [
       'html5',
-      'css3',
-      'javascript',
-      'react',
-      'sass'
+      'css3'
     ]
   },
   {
-    name: 'Portfolio 4',
-    desc: 'portfolio descrição numero 4 para usar como exemplo em grid do site.',
-    site: '',
-    github: '',
-    img: '',
+    name: 'Starbucks',
+    desc: 'Adaptação do site Starbucks utilizando CSS grid.',
+    site: 'https://yagrrusso.github.io/starbucks/',
+    github: 'https://github.com/YaGRRusso/starbucks',
+    img: 'starbucks',
     stacks: [
       'html5',
-      'css3',
-      'javascript',
-      'react',
-      'sass'
-    ]
-  },
-  {
-    name: 'Portfolio 5',
-    desc: 'portfolio descrição numero 5 para usar como exemplo em grid do site.',
-    site: '',
-    github: '',
-    img: '',
-    stacks: [
-      'html5',
-      'css3',
-      'javascript',
-      'react',
-      'sass'
+      'css3'
     ]
   },
 ]
