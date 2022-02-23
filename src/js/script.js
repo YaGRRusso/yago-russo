@@ -14,7 +14,7 @@ document.querySelectorAll('[data-cv]').forEach(a => {
 // ===================== //
 //       LISTENERS       //
 // ===================== //
-if (localStorage.getItem('theme') != 'dark') {
+if (localStorage.getItem('theme') == 'dark') {
   document.querySelector('html').classList.add('light-mode');
   document.querySelectorAll('.theme-switcher').forEach(theme => theme.classList.add('light-mode'));
 }
