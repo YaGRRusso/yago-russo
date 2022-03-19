@@ -47,23 +47,23 @@ let personal = {
 }
 
 let experiencies = [{
-    name: 'Monitor de Informática e Tecnologia',
-    company: 'Instituto Mix de Profissões',
-    date: {
-      start: 'out de 2019',
-      end: 'mar de 2020'
-    },
-    description: 'Aulas de Programação, Design e Tecnologias | Suporte de Rede e Máquinas | Design de Artes'
+  name: 'Monitor de Informática e Tecnologia',
+  company: 'Instituto Mix de Profissões',
+  date: {
+    start: 'out de 2019',
+    end: 'mar de 2020'
   },
-  {
-    name: 'Jovem Aprendiz',
-    company: 'Verde-Card (Lojas Quero-Quero)',
-    date: {
-      start: 'set de 2020',
-      end: currentDate()
-    },
-    description: 'Administração | Gerenciamento de Informações | Suporte TI'
+  description: 'Aulas de Programação, Design e Tecnologias | Suporte de Rede e Máquinas | Design de Artes'
+},
+{
+  name: 'Jovem Aprendiz',
+  company: 'Verde-Card (Lojas Quero-Quero)',
+  date: {
+    start: 'set de 2020',
+    end: currentDate()
   },
+  description: 'Administração | Gerenciamento de Informações | Suporte TI'
+},
 ]
 
 let formations = [{
@@ -77,103 +77,103 @@ let formations = [{
 }]
 
 let courses = [{
-    name: 'Next',
-    institute: 'Udemy',
-    hours: 28,
-    description: 'React | Next | Typescript | Firebase | TailwindCSS',
-    link: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-983fd49d-5816-45cc-9d30-1173a39ea866.pdf'
-  },
-  {
-    name: 'Javascript',
-    institute: 'B7Web',
-    hours: 44,
-    description: 'Javacript | Rest API | ES6 | DOM',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_3215285.jpg'
-  },
-  {
-    name: 'HTML5 e CSS3',
-    institute: 'B7Web',
-    hours: 89,
-    description: 'HTML5 | CSS3 | Responsividade | SEO',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_8650229.jpg'
-  },
-  {
-    name: 'Typescript',
-    institute: 'B7Web',
-    hours: 20,
-    description: 'Typescript',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_4076622.jpg'
-  },
-  {
-    name: 'SASS',
-    institute: 'B7Web',
-    hours: 20,
-    description: 'Sass | Webpack',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_9653220.jpg'
-  },
-  {
-    name: 'Banco de Dados',
-    institute: 'B7Web',
-    hours: 20,
-    description: 'SQL | HeidiSQL',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_3610821.jpg'
-  },
-  {
-    name: 'Bootstrap4',
-    institute: 'B7Web',
-    hours: 20,
-    description: 'Bootstrap 4',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_8838042.jpg'
-  },
-  {
-    name: 'Git/Github',
-    institute: 'B7Web',
-    hours: 20,
-    description: 'Comandos Git | Repositórios Github',
-    link: 'https://alunos.b7web.com.br/media/certificates/certificado_6673888.jpg'
-  },
-  {
-    name: 'Design Gráfico',
-    institute: 'Instituo Mix de Profissões',
-    hours: 99,
-    description: 'Photoshop | Illustrator | Premiere',
-    link: ''
-  },
-  {
-    name: 'Informática Básica',
-    institute: 'Instituo Mix de Profissões',
-    hours: 90,
-    description: 'Word | Excel | Power Point | Windows | Montagem, Manutenção e Formatação',
-    link: ''
-  },
-  {
-    name: 'Logística',
-    institute: 'Instituo Mix de Profissões',
-    hours: 72,
-    description: 'Logística',
-    link: ''
-  },
-  {
-    name: 'Recursos Humanos',
-    institute: 'Instituo Mix de Profissões',
-    hours: 88,
-    description: 'Gestão de Pessoas',
-    link: ''
-  },
-  {
-    name: 'Administração Financeira',
-    institute: 'Instituo Mix de Profissões',
-    hours: 77,
-    description: 'Gestão Financeira',
-    link: ''
-  },
-  {
-    name: 'Marketing',
-    institute: 'Instituo Mix de Profissões',
-    hours: 75,
-    description: 'UX/UI | Marketing',
-    link: ''
-  },
+  name: 'Next',
+  institute: 'Udemy',
+  hours: 28,
+  description: 'React | Next | Typescript | Firebase | TailwindCSS',
+  link: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-983fd49d-5816-45cc-9d30-1173a39ea866.pdf'
+},
+{
+  name: 'Javascript',
+  institute: 'B7Web',
+  hours: 44,
+  description: 'Javacript | Rest API | ES6 | DOM',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_3215285.jpg'
+},
+{
+  name: 'HTML5 e CSS3',
+  institute: 'B7Web',
+  hours: 89,
+  description: 'HTML5 | CSS3 | Responsividade | SEO',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_8650229.jpg'
+},
+{
+  name: 'Typescript',
+  institute: 'B7Web',
+  hours: 20,
+  description: 'Typescript',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_4076622.jpg'
+},
+{
+  name: 'SASS',
+  institute: 'B7Web',
+  hours: 20,
+  description: 'Sass | Webpack',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_9653220.jpg'
+},
+{
+  name: 'Banco de Dados',
+  institute: 'B7Web',
+  hours: 20,
+  description: 'SQL | HeidiSQL',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_3610821.jpg'
+},
+{
+  name: 'Bootstrap4',
+  institute: 'B7Web',
+  hours: 20,
+  description: 'Bootstrap 4',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_8838042.jpg'
+},
+{
+  name: 'Git/Github',
+  institute: 'B7Web',
+  hours: 20,
+  description: 'Comandos Git | Repositórios Github',
+  link: 'https://alunos.b7web.com.br/media/certificates/certificado_6673888.jpg'
+},
+{
+  name: 'Design Gráfico',
+  institute: 'Instituo Mix de Profissões',
+  hours: 99,
+  description: 'Photoshop | Illustrator | Premiere',
+  link: ''
+},
+{
+  name: 'Informática Básica',
+  institute: 'Instituo Mix de Profissões',
+  hours: 90,
+  description: 'Word | Excel | Power Point | Windows | Montagem, Manutenção e Formatação',
+  link: ''
+},
+{
+  name: 'Logística',
+  institute: 'Instituo Mix de Profissões',
+  hours: 72,
+  description: 'Logística',
+  link: ''
+},
+{
+  name: 'Recursos Humanos',
+  institute: 'Instituo Mix de Profissões',
+  hours: 88,
+  description: 'Gestão de Pessoas',
+  link: ''
+},
+{
+  name: 'Administração Financeira',
+  institute: 'Instituo Mix de Profissões',
+  hours: 77,
+  description: 'Gestão Financeira',
+  link: ''
+},
+{
+  name: 'Marketing',
+  institute: 'Instituo Mix de Profissões',
+  hours: 75,
+  description: 'UX/UI | Marketing',
+  link: ''
+},
 ]
 
 let languages = {
@@ -217,6 +217,7 @@ let skills = {
     'webpack',
     'vscode',
     'apache',
+    'filezilla',
 
     // Design
     'photoshop',
@@ -239,117 +240,143 @@ let skills = {
     'Empatia',
   ],
   stacks: [{
-      name: 'full-stack',
-      level: 65
-    },
-    {
-      name: 'back-end',
-      level: 40
-    },
-    {
-      name: 'front-end',
-      level: 85
-    },
-    {
-      name: 'mobile',
-      level: 60
-    },
-    {
-      name: 'design',
-      level: 75
-    },
+    name: 'full-stack',
+    level: 65
+  },
+  {
+    name: 'back-end',
+    level: 40
+  },
+  {
+    name: 'front-end',
+    level: 85
+  },
+  {
+    name: 'mobile',
+    level: 60
+  },
+  {
+    name: 'design',
+    level: 75
+  },
   ]
 }
 
 let social = [{
-    name: 'github',
-    link: 'https://github.com/YaGRRusso',
-  },
-  {
-    name: 'linkedin',
-    link: 'https://linkedin.com/in/yago-russo',
-  },
-  {
-    name: 'whatsapp',
-    link: 'https://api.whatsapp.com/send/?phone=5551986824203&text=Ol%C3%A1,+Yago,+tudo+bem?&app_absent=0',
-  },
-  {
-    name: 'gmail',
-    link: 'mailto:yagrrusso@gmail.com',
-  },
-  {
-    name: 'curriculum',
-    link: 'https://bit.ly/yagocurriculo',
-  }
+  name: 'github',
+  link: 'https://github.com/YaGRRusso',
+},
+{
+  name: 'linkedin',
+  link: 'https://linkedin.com/in/yago-russo',
+},
+{
+  name: 'whatsapp',
+  link: 'https://api.whatsapp.com/send/?phone=5551986824203&text=Ol%C3%A1,+Yago,+tudo+bem?&app_absent=0',
+},
+{
+  name: 'gmail',
+  link: 'mailto:yagrrusso@gmail.com',
+},
+{
+  name: 'curriculum',
+  link: 'https://bit.ly/yagocurriculo',
+}
 ]
 
 let portfolio = [{
-    name: 'Cactus E-Commerce',
-    desc: 'Trabalho de conclusão de curso (TCC). Sistema de catálogo, controle de estoque, encomendas de roupas e autenticação de usuário.',
-    site: 'https://cactusveste.000webhostapp.com/',
-    github: 'https://github.com/YaGRRusso/tcc-cactus-e-commerce',
-    img: 'cactus',
-    stacks: [
-      'html5',
-      'css3',
-      'bootstrap',
-      'jquery',
-      'php',
-      'mysql'
-    ]
-  },
-  {
-    name: 'React + Rest API',
-    desc: 'Integração React com API JsonPlaceholder e React Router.',
-    site: 'https://dreamy-hermann-67535c.netlify.app/',
-    github: 'https://github.com/YaGRRusso/album-react',
-    img: 'react-api',
-    stacks: [
-      'react',
-      'api',
-      'tailwind'
-    ]
-  },
-  {
-    name: 'Pizzas',
-    desc: 'Projeto de delivery de pizzas gerado com JS baseado em um array de dados.',
-    site: 'https://yagrrusso.github.io/pizza-delivery/',
-    github: 'https://github.com/YaGRRusso/pizza-delivery',
-    img: 'pizzas',
-    stacks: [
-      'html5',
-      'css3',
-      'javascript'
-    ]
-  },
-  {
-    name: 'AWAX',
-    desc: 'Landing page criada com HTML e CSS.',
-    site: 'https://yagrrusso.github.io/awax/',
-    github: 'https://github.com/YaGRRusso/awax',
-    img: 'awax',
-    stacks: [
-      'html5',
-      'css3'
-    ]
-  },
-  {
-    name: 'Starbucks',
-    desc: 'Adaptação do site Starbucks utilizando CSS grid.',
-    site: 'https://yagrrusso.github.io/starbucks/',
-    github: 'https://github.com/YaGRRusso/starbucks',
-    img: 'starbucks',
-    stacks: [
-      'html5',
-      'css3'
-    ]
-  },
+  name: 'Cactus',
+  desc: 'Sistema de catálogo, controle de estoque, encomendas de roupas e autenticação de usuário.',
+  site: 'https://cactusveste.000webhostapp.com/',
+  github: 'https://github.com/YaGRRusso/tcc-cactus-e-commerce',
+  img: 'cactus',
+  stacks: [
+    'html5',
+    'css3',
+    'bootstrap',
+    'jquery',
+    'php',
+    'mysql'
+  ]
+},
+{
+  name: 'Original Redes',
+  desc: 'Site para conversão de clientes e apresentação da empresa.',
+  site: 'https://originalredesrs.com.br/',
+  github: 'https://github.com/YaGRRusso/original-redes-persianas',
+  img: 'original',
+  stacks: [
+    'html5',
+    'css3',
+    'javascript'
+  ]
+},
+{
+  name: 'YRC Money',
+  desc: 'Sistema para controle monetário filtrados por categoria e meses.',
+  site: 'https://focused-murdock-23c796.netlify.app/',
+  github: 'https://github.com/YaGRRusso/yrc-money',
+  img: 'yrcmoney',
+  stacks: [
+    'react',
+    'typescript'
+  ]
+},
+{
+  name: 'AWAX',
+  desc: 'Template de landing page criado apenas com HTML e CSS',
+  site: 'https://yagrrusso.github.io/awax/',
+  github: 'https://github.com/YaGRRusso/awax',
+  img: 'awax',
+  stacks: [
+    'html5',
+    'css3'
+  ]
+},
+{
+  name: 'Cadastro DEV',
+  desc: 'Tela de cadastro criada para registro de usário.',
+  site: 'https://yagrrusso.github.io/',
+  github: 'https://github.com/YaGRRusso/',
+  img: 'cadastro',
+  stacks: [
+    'react',
+    'typescript'
+  ]
+},
+{
+  name: 'Starbucks',
+  desc: 'Adaptação do site Starbucks utilizando CSS grid.',
+  site: 'https://yagrrusso.github.io/starbucks/',
+  github: 'https://github.com/YaGRRusso/starbucks',
+  img: 'starbucks',
+  stacks: [
+    'html5',
+    'css3'
+  ]
+},
+{
+  name: 'Pizzas',
+  desc: 'Projeto de delivery de pizzas gerado com JS baseado em um array de dados.',
+  site: 'https://yagrrusso.github.io/pizza-delivery/',
+  github: 'https://github.com/YaGRRusso/pizza-delivery',
+  img: 'pizzas',
+  stacks: [
+    'html5',
+    'css3',
+    'javascript'
+  ]
+},
+{
+  name: 'React + Rest API',
+  desc: 'Integração React com API JsonPlaceholder e React Router.',
+  site: 'https://dreamy-hermann-67535c.netlify.app/',
+  github: 'https://github.com/YaGRRusso/album-react',
+  img: 'react-api',
+  stacks: [
+    'react',
+    'api',
+    'tailwind'
+  ]
+},
 ]
-
-// console.log('Personal: ', personal)
-// console.log('Experiencies: ', experiencies)
-// console.log('Formations: ', formations)
-// console.log('Courses: ', courses)
-// console.log('Languages: ', languages)
-// console.log('Skills: ', skills)
-// console.log('Social: ', social)

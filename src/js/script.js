@@ -110,9 +110,9 @@ function scrollPercent() {
       }
     } else if (i === headerItems - 1) {
       if (windowPos >= divPos[headerItems - 1].pos - 80) {
-        document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.add('active'))
+        document.querySelectorAll(`[data-header="${divPos[headerItems - 1].name}"]`).forEach((i) => i.classList.add('active'))
       } else {
-        document.querySelectorAll(`[data-header="${divPos[headerItems-1].name}"]`).forEach((i) => i.classList.remove('active'))
+        document.querySelectorAll(`[data-header="${divPos[headerItems - 1].name}"]`).forEach((i) => i.classList.remove('active'))
       }
     } else {
       if (windowPos >= divPos[i].pos - 80 && windowPos < divPos[i + 1].pos - 80) {
@@ -147,7 +147,7 @@ function InfoWrite() {
   document.querySelector('[data-item="email"]').innerHTML = personal.email;
   document.querySelector('[data-item="phone"]').innerHTML = personal.phone;
   document.querySelector('[data-item="target"]').innerHTML = personal.interest;
-  document.querySelector('[data-item="address"]').innerHTML = `${personal.address.city.long}, ${personal.address.country.short}`;
+  document.querySelector('[data-item="address"]').innerHTML = `${personal.address.city.long}, ${personal.address.state.short}`;
 
 
   // INICIO SKILLS
@@ -220,9 +220,9 @@ function typeWriter() {
 
   Olá, tudo bem?
   <br><br>
-  Me chamo Yago Russo, tenho ${personal.age} anos e sou apaixonado por informática desde criança, aprendi muitas coisas sozinho como: design, programação, hardware e até mesmo inglês, sempre amei essa área e sigo aprendendo cada vez mais.
+  Me chamo Yago Russo, tenho ${personal.age} anos e sou apaixonado por informática desde criança, aprendi muitas coisas sozinho como: design, programação, hardware e até mesmo inglês, sempre amei essa área e sigo me aprimorando a cada dia.
   <br><br>
-  Tenho experiência em programação com freelances, ferramentas pessoais e hobbies, atualmente busco por uma oportunidade profissional efetiva.
+  Tenho anos de experiência em desenvolvimento web com freelances, ferramentas pessoais e também já dei aulas de informática.
 
   `];
   document.querySelector('.about-desc .about').innerHTML = msg[0].substring(0, txtPos) + '<span class="blink">▮</span>';
@@ -290,7 +290,7 @@ document.querySelector('.stacks-chevron').addEventListener('click', (item) => {
 // ===================== //
 function portfolioWrite() {
   let sites = ''
-  for (let i = 4; i >= 0; i--) {
+  for (let i = 7; i >= 0; i--) {
     let stacks = ''
 
 
@@ -314,8 +314,7 @@ function portfolioWrite() {
           ${portfolio[i].desc}
         </div>
         <div class="grid-item-buttons">
-          <a href="${portfolio[i].github ? portfolio[i].github : 'https://yagrrusso.github.io'}" target="_blank"><img src="./src/img/social/github.svg" alt="github">Código</a>
-          <a href="${portfolio[i].site ? portfolio[i].site : 'https://github.com/YaGRRusso'}" target="_blank"><img src="./src/img/social/site.svg" alt="site">Site</a>
+          <a href="${portfolio[i].site ? portfolio[i].site : 'https://github.com/YaGRRusso'}" target="_blank"><img src="./src/img/social/site.svg" alt="site">Visitar</a>
         </div>
       </div>
 
@@ -365,7 +364,7 @@ function sendEmail() {
 // ===================== //
 function footerWrite() {
   document.querySelector('.footer-contact span[data-contact="address"]').innerHTML =
-    `${personal.address.neighborhood.long}<br>${personal.address.city.long}, ${personal.address.country.short}`;
+    `${personal.address.city.long}, ${personal.address.state.short}<br/>${personal.address.country.long}`;
   document.querySelector('.footer-contact span[data-contact="phone"]').innerHTML = personal.phone;
   document.querySelector('.footer-contact span[data-contact="email"]').innerHTML = personal.email;
   let network = '';
