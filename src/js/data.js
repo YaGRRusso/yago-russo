@@ -288,11 +288,9 @@ let portfolio = [{
   name: 'Cactus',
   desc: 'Sistema de catálogo, controle de estoque, encomendas de roupas e autenticação de usuário.',
   site: 'https://cactusveste.000webhostapp.com/',
-  github: 'https://github.com/YaGRRusso/tcc-cactus-e-commerce',
   img: 'cactus',
   stacks: [
     'html5',
-    'css3',
     'bootstrap',
     'jquery',
     'php',
@@ -300,10 +298,19 @@ let portfolio = [{
   ]
 },
 {
+  name: 'YRC Money',
+  desc: 'Sistema para controle monetário filtrados por categoria e meses.',
+  site: 'https://focused-murdock-23c796.netlify.app/',
+  img: 'yrcmoney',
+  stacks: [
+    'react',
+    'typescript'
+  ]
+},
+{
   name: 'Original Redes',
   desc: 'Site para conversão de clientes e apresentação da empresa.',
   site: 'https://originalredesrs.com.br/',
-  github: 'https://github.com/YaGRRusso/original-redes-persianas',
   img: 'original',
   stacks: [
     'html5',
@@ -312,32 +319,20 @@ let portfolio = [{
   ]
 },
 {
-  name: 'YRC Money',
-  desc: 'Sistema para controle monetário filtrados por categoria e meses.',
-  site: 'https://focused-murdock-23c796.netlify.app/',
-  github: 'https://github.com/YaGRRusso/yrc-money',
-  img: 'yrcmoney',
+  name: 'Galeria React',
+  desc: 'Galeria de imagens com envio multiplo integrada ao firebase.',
+  site: 'https://genuine-daifuku-8d20ab.netlify.app/',
+  img: 'gallery',
   stacks: [
     'react',
-    'typescript'
-  ]
-},
-{
-  name: 'AWAX',
-  desc: 'Template de landing page criado apenas com HTML e CSS',
-  site: 'https://yagrrusso.github.io/awax/',
-  github: 'https://github.com/YaGRRusso/awax',
-  img: 'awax',
-  stacks: [
-    'html5',
-    'css3'
+    'typescript',
+    'firebase'
   ]
 },
 {
   name: 'Cadastro DEV',
-  desc: 'Tela de cadastro criada para registro de usário.',
-  site: 'https://yagrrusso.github.io/',
-  github: 'https://github.com/YaGRRusso/',
+  desc: 'Tela de cadastro usando router-dom com proteção de rotas.',
+  site: 'https://gleeful-halva-fb6b70.netlify.app/',
   img: 'cadastro',
   stacks: [
     'react',
@@ -345,10 +340,19 @@ let portfolio = [{
   ]
 },
 {
+  name: 'AWAX',
+  desc: 'Template de landing page criado apenas com HTML e CSS.',
+  site: 'https://yagrrusso.github.io/awax/',
+  img: 'awax',
+  stacks: [
+    'html5',
+    'css3'
+  ]
+},
+{
   name: 'Starbucks',
   desc: 'Adaptação do site Starbucks utilizando CSS grid.',
   site: 'https://yagrrusso.github.io/starbucks/',
-  github: 'https://github.com/YaGRRusso/starbucks',
   img: 'starbucks',
   stacks: [
     'html5',
@@ -359,7 +363,6 @@ let portfolio = [{
   name: 'Pizzas',
   desc: 'Projeto de delivery de pizzas gerado com JS baseado em um array de dados.',
   site: 'https://yagrrusso.github.io/pizza-delivery/',
-  github: 'https://github.com/YaGRRusso/pizza-delivery',
   img: 'pizzas',
   stacks: [
     'html5',
@@ -371,7 +374,6 @@ let portfolio = [{
   name: 'React + Rest API',
   desc: 'Integração React com API JsonPlaceholder e React Router.',
   site: 'https://dreamy-hermann-67535c.netlify.app/',
-  github: 'https://github.com/YaGRRusso/album-react',
   img: 'react-api',
   stacks: [
     'react',
