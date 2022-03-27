@@ -193,9 +193,11 @@ let skills = {
     'react',
     'jquery',
     'redux',
+    'router-dom',
     // 'nextjs',
     'bootstrap',
     'tailwind',
+    'styled-components',
     // 'nodejs',
     'sql',
     'api',
@@ -298,16 +300,6 @@ let portfolio = [{
   ]
 },
 {
-  name: 'YRC Money',
-  desc: 'Sistema para controle monetário filtrados por categoria e meses.',
-  site: 'https://focused-murdock-23c796.netlify.app/',
-  img: 'yrcmoney',
-  stacks: [
-    'react',
-    'typescript'
-  ]
-},
-{
   name: 'Original Redes',
   desc: 'Site para conversão de clientes e apresentação da empresa.',
   site: 'https://originalredesrs.com.br/',
@@ -319,6 +311,28 @@ let portfolio = [{
   ]
 },
 {
+  name: 'YRC Money',
+  desc: 'Sistema para controle monetário filtrados por categoria e meses.',
+  site: 'https://focused-murdock-23c796.netlify.app/',
+  img: 'yrcmoney',
+  stacks: [
+    'react',
+    'typescript',
+    'styled-components'
+  ]
+},
+{
+  name: 'DevMemory',
+  desc: 'Jogo da memoria com temas salvos no localstorage',
+  site: 'https://magnificent-wisp-b33570.netlify.app/',
+  img: 'devmemory',
+  stacks: [
+    'react',
+    'typescript',
+    'styled-components'
+  ]
+},
+{
   name: 'Galeria React',
   desc: 'Galeria de imagens com envio multiplo integrada ao firebase.',
   site: 'https://genuine-daifuku-8d20ab.netlify.app/',
@@ -326,7 +340,8 @@ let portfolio = [{
   stacks: [
     'react',
     'typescript',
-    'firebase'
+    'firebase',
+    'styled-components'
   ]
 },
 {
@@ -336,7 +351,9 @@ let portfolio = [{
   img: 'cadastro',
   stacks: [
     'react',
-    'typescript'
+    'typescript',
+    'styled-components',
+    'router-dom'
   ]
 },
 {
