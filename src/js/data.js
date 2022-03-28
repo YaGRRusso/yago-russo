@@ -211,6 +211,7 @@ let skills = {
     // 'mongodb',
 
     // Tools
+    'wordpress',
     'git',
     'npm',
     'yarn',
