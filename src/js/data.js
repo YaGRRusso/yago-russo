@@ -334,6 +334,18 @@ let portfolio = [{
   ]
 },
 {
+  name: 'Devs Finder',
+  desc: 'Integração com API do github para visualização de informações gerais de usuários',
+  site: 'https://beamish-mochi-cf3488.netlify.app/',
+  img: 'devsfinder',
+  stacks: [
+    'react',
+    'typescript',
+    'styled-components',
+    'api'
+  ]
+},
+{
   name: 'Galeria React',
   desc: 'Galeria de imagens com envio multiplo integrada ao firebase.',
   site: 'https://genuine-daifuku-8d20ab.netlify.app/',
