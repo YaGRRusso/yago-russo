@@ -1,320 +1,373 @@
 <!DOCTYPE html>
 <!-- <html lang="pt-br" class="dark-mode"> -->
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.5"
+    />
+    <meta name="description" content="Portfolio de Yago Russo" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Yago Russo" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>Yago Russo</title>
+    <link rel="icon" type="image/x-icon" href="./src/img/icons/icon.svg" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <meta name="description" content="Portfolio de Yago Russo">
-  <meta name="keywords" content="HTML, CSS, JavaScript">
-  <meta name="author" content="Yago Russo">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <title>Yago Russo</title>
-  <link rel="icon" type="image/x-icon" href="./src/img/icons/icon.svg">
-</head>
+  <body>
+    <div class="loadingScreen">
+      <p>Bem-vindo!</p>
+      <div class="loadingIcon"></div>
+    </div>
+    <div class="hello">
+      <header>
+        <div class="header">
+          <div class="logo">&lt;/&gt; Yago <span>Russo</span></div>
+          <div class="header-menu">
+            <nav>
+              <ul>
+                <li>
+                  <a href="#sobre" class="active" data-header="about">Sobre</a>
+                </li>
+                <li><a href="" data-header="portfolio">Portfolio</a></li>
+                <li><a href="" data-header="footer">Contato</a></li>
+                <a href="" target="_blank" data-cv>
+                  <button class="btn">
+                    Curriculo<img
+                      src="./src/img/icons/download.svg"
+                      alt="Download"
+                    />
+                  </button>
+                </a>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-right">
+            <div class="theme-switcher"></div>
+          </div>
+          <div class="menu-opener">
+            <div class="menu-opener--hamb"></div>
+          </div>
+        </div>
+        <div class="percent"></div>
+      </header>
 
-<body>
-  <div class="loadingScreen">
-    <p>Bem-vindo!</p>
-    <div class="loadingIcon"></div>
-  </div>
-  <div class="hello">
-    <header>
-      <div class="header">
-        <div class="logo">
-          &lt;/&gt; Yago <span>Russo</span>
+      <div class="portfolio-modal">
+        xxxx
+        <span>&times;</span>
+        <img src="./media/sites/skeleton.png" alt="site" />
+      </div>
+
+      <div class="mobile-modal"></div>
+      <div class="header-mobile">
+        <p>Menu</p>
+        <div class="theme-switcher"></div>
+        <nav>
+          <ul>
+            <li>
+              <img src="./src/img/icons/person.svg" alt="Person" /><a
+                href=""
+                class="active"
+                data-header="about"
+                >Sobre</a
+              >
+            </li>
+            <li>
+              <img src="./src/img/icons/work.svg" alt="Work" /><a
+                href=""
+                data-header="portfolio"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <img src="./src/img/icons/email.svg" alt="Email" /><a
+                href=""
+                data-header="footer"
+                >Contato</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <a href="" target="_blank" data-cv>
+          <button class="btn">
+            Baixar CV <img src="./src/img/icons/download.svg" alt="Download" />
+          </button>
+        </a>
+      </div>
+
+      <div class="intro">
+        <div class="intro-left" data-animation="left">
+          <h2>
+            <span>//</span>Olá, me chamo Yago Russo
+            <img src="./src/img/icons/wave.gif" />
+          </h2>
+          <h1>Front-end<br />Web Developer</h1>
+          <p>
+            Dev especializado em frontend, com conhecimentos de backend e
+            apaixonado por tecnologia e inovação.
+          </p>
+          <a href="mailto:yagrrusso@gmail.com">.FaleComigo( );</a>
         </div>
-        <div class="header-menu">
-          <nav>
-            <ul>
-              <li><a href="#sobre" class="active" data-header="about">Sobre</a></li>
-              <li><a href="" data-header="portfolio">Portfolio</a></li>
-              <li><a href="" data-header="footer">Contato</a></li>
-              <a href="" target="_blank" data-cv>
-                <button class="btn">Curriculo<img src="./src/img/icons/download.svg" alt="Download"></button>
-              </a>
-            </ul>
-          </nav>
-        </div>
-        <div class="header-right">
-          <div class="theme-switcher"></div>
-        </div>
-        <div class="menu-opener">
-          <div class="menu-opener--hamb"></div>
+
+        <div class="intro-right" data-animation="right">
+          <img src="./media/hello.svg" alt="Imagem" />
         </div>
       </div>
-      <div class="percent"></div>
-    </header>
-
-    <div class="portfolio-modal">
-      xxxx
-      <span>&times;</span>
-      <img src="./media/sites/skeleton.png" alt="site">
+      <div class="arrowDown" data-animation="arrow">
+        <span>Conheça-me!</span>
+        <img src="./src/img/icons/arrowDown.svg" alt="arrowDown" />
+      </div>
     </div>
 
-    <div class="mobile-modal"></div>
-    <div class="header-mobile">
-      <p>Menu</p>
-      <div class="theme-switcher"></div>
-      <nav>
-        <ul>
-          <li><img src="./src/img/icons/person.svg" alt="Person"><a href="" class="active" data-header="about">Sobre</a>
-          </li>
-          <li><img src="./src/img/icons/work.svg" alt="Work"><a href="" data-header="portfolio">Portfolio</a></li>
-          <li><img src="./src/img/icons/email.svg" alt="Email"><a href="" data-header="footer">Contato</a></li>
-        </ul>
-      </nav>
-      <a href="" target="_blank" data-cv>
-        <button class="btn">Baixar CV <img src="./src/img/icons/download.svg" alt="Download"></button>
-      </a>
-    </div>
-
-    <div class="intro">
-
-      <div class="intro-left" data-animation="left">
-        <h2><span>//</span>Olá, me chamo Yago Russo <img src="./src/img/icons/wave.gif"></h2>
-        <h1>Front-end<br>Web Developer</h1>
-        <p>Desenvolvedor mobile first, designer e apaixonado por tecnologia.</p>
-        <a href="mailto:yagrrusso@gmail.com">.FaleComigo( );</a>
-      </div>
-
-      <div class="intro-right" data-animation="right">
-        <img src="./media/hello.svg" alt="Imagem">
-      </div>
-
-    </div>
-    <div class="arrowDown" data-animation="arrow">
-      <span>Conheça-me!</span>
-      <img src="./src/img/icons/arrowDown.svg" alt="arrowDown">
-    </div>
-  </div>
-
-  <section class="about">
-    <div class="section-body">
-      <div class="section-left" data-animation="left">
-        <div class="about-box selected" data-info="about">
-          <div class="about-box-title">
-            <h3>Introdução</h3><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-              fill="#000000">
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path
-                d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
-          <div class="about-box-desc">
-            Me conheça melhor!
-          </div>
-        </div>
-        <div class="about-box" data-info="information">
-          <div class="about-box-title">
-            <h3>Informações</h3><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-              fill="#3BADCB">
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path
-                d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-            </svg>
-          </div>
-          <div class="about-box-desc">
-            Informações detalhadas.
-          </div>
-        </div>
-        <div class="about-box" data-info="skills">
-          <div class="about-box-title">
-            <h3>Habilidades</h3><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-              fill="#3BADCB">
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path
-                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z" />
-            </svg>
-          </div>
-          <div class="about-box-desc">
-            O que sei fazer melhor.
-          </div>
-        </div>
-      </div>
-      <div class="section-right" data-animation="right">
-        <div class="about-type">Introdução</div>
-        <div class="about-title">Um pouco sobre mim.</div>
-        <div class="about-desc">
-
-          <div class="about"></div>
-
-          <div class="infos">
-            <div class="about-desc-item">
-              <p><img src="./src/img/icons/person.svg">Nome:</p>
-              <span data-item="name"></span>
-            </div>
-            <div class="about-desc-item">
-              <p><img src="./src/img/icons/cake.svg">Idade:</p>
-              <span data-item="year"></span>
-            </div>
-            <div class="about-desc-item">
-              <p><img src="./src/img/icons/email.svg">E-mail:</p>
-              <span data-item="email"></span>
-            </div>
-            <div class="about-desc-item">
-              <p><img src="./src/img/icons/phone.svg">Telefone:</p>
-              <span data-item="phone"></span>
-            </div>
-            <div class="about-desc-item">
-              <p><img src="./src/img/icons/work.svg">Interesse:</p>
-              <span data-item="target"></span>
-            </div>
-            <div class="about-desc-item">
-              <p><img src="./src/img/icons/address.svg">Endereço:</p>
-              <span data-item="address"></span>
-            </div>
-          </div>
-
-          <div class="skills">
-            <ul>
-              <li>
-                <h2>Full-Stack</h2>
-                <div class="progressBar">
-                  <div class="progress" style="width: 95%;"><span>95%</span></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="stacks">
-    <div class="section-body">
-
-      <div class="stack-display">
-        <div class="stack" data-stack="1"></div>
-        <div class="stack" data-stack="2"></div>
-        <div class="stack" data-stack="3"></div>
-        <div class="stack" data-stack="4"></div>
-        <div class="stack" data-stack="5"></div>
-        <div class="stack" data-stack="6"></div>
-      </div>
-
-      <div class="all-stacks-display">
-        <p>Todas as Tecnologias:</p>
-      </div>
-      <div class="stacks-chevron"><span>Mais</span><img src="./src/img/icons/chevron.svg" alt="chevron"></div>
-    </div>
-  </div>
-
-  <section class="portfolio">
-    <div class="section-body">
-      <h2 class="section-title">Portfolio</h2>
-      <p>Projetos feitos.</p>
-      <div class="portfolio-grid">
-
-        <div class="grid-item" data-animation="bottom">
-
-          <a href="" target="_blank">
-            <img src="./media/sites/skeleton.png" alt="Imagem">
-          </a>
-          <div class="grid-item-container">
-            <div class="grid-item-title">
-              <p>Titulo1
-                <div class="grid-item-stacks">
-                  <div class="grid-item-stack"><img src="./src/img/stacks/html5.svg"></div>
-                  <div class="grid-item-stack"><img src="./src/img/stacks/css3.svg"></div>
-                </div>
-            </div>
-
-            <div class="grid-item-desc">
-              Descrição do site - Descrição do site - Descrição do site - Descrição do site - Descrição do site
-            </div>
-            <div class="grid-item-buttons">
-              <a href=""><img src="./src/img/social/github.svg" alt="">Código</a>
-              <a href=""><img src="./src/img/social/site.svg" alt="">Site</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-  <footer>
-    <section class="footer">
+    <section class="about">
       <div class="section-body">
-
-        <div class="logo">
-          &lt;/&gt; Yago <span>Russo</span>
-          <div class="network">
-
+        <div class="section-left" data-animation="left">
+          <div class="about-box selected" data-info="about">
+            <div class="about-box-title">
+              <h3>Introdução</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#000000"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </div>
+            <div class="about-box-desc">Me conheça melhor!</div>
+          </div>
+          <div class="about-box" data-info="information">
+            <div class="about-box-title">
+              <h3>Informações</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#3BADCB"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                />
+              </svg>
+            </div>
+            <div class="about-box-desc">Informações detalhadas.</div>
+          </div>
+          <div class="about-box" data-info="skills">
+            <div class="about-box-title">
+              <h3>Habilidades</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#3BADCB"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"
+                />
+              </svg>
+            </div>
+            <div class="about-box-desc">O que sei fazer melhor.</div>
           </div>
         </div>
+        <div class="section-right" data-animation="right">
+          <div class="about-type">Introdução</div>
+          <div class="about-title">Um pouco sobre mim.</div>
+          <div class="about-desc">
+            <div class="about"></div>
 
-        <div class="footer-email" data-animation="bottom">
-          <form>
-
-            <div class="form-line">
-              <input id="em-name" type="text" placeholder="Nome">
-              <input id="em-email" type="email" placeholder="Email">
-            </div>
-
-            <div class="form-line">
-              <input id="em-subject" type="text" placeholder="Assunto">
-            </div>
-
-            <div class="form-line">
-              <textarea id="em-message" cols="30" rows="10" placeholder="Mensagem"></textarea>
-            </div>
-
-            <div class="form-line">
-              <button class="btn" onclick="sendEmail()" type="submit">Enviar</button>
-            </div>
-
-          </form>
-        </div>
-
-        <div class="footer-infos">
-
-          <div class="footer-left" data-animation="left">
-            <div class="footer-contacts">
-              <div class="footer-contact">
-                <img src="./src/img/icons/address.svg" alt="Address">
-                <span data-contact="address"></span>
+            <div class="infos">
+              <div class="about-desc-item">
+                <p><img src="./src/img/icons/person.svg" />Nome:</p>
+                <span data-item="name"></span>
               </div>
-              <div class="footer-contact">
-                <img src="./src/img/icons/phone.svg" alt="Phone">
-                <span data-contact="phone"></span>
+              <div class="about-desc-item">
+                <p><img src="./src/img/icons/cake.svg" />Idade:</p>
+                <span data-item="year"></span>
               </div>
-              <div class="footer-contact">
-                <img src="./src/img/icons/email.svg" alt="Email">
-                <span data-contact="email"></span>
+              <div class="about-desc-item">
+                <p><img src="./src/img/icons/email.svg" />E-mail:</p>
+                <span data-item="email"></span>
               </div>
+              <div class="about-desc-item">
+                <p><img src="./src/img/icons/phone.svg" />Telefone:</p>
+                <span data-item="phone"></span>
+              </div>
+              <div class="about-desc-item">
+                <p><img src="./src/img/icons/work.svg" />Cargo:</p>
+                <span data-item="target"></span>
+              </div>
+              <div class="about-desc-item">
+                <p><img src="./src/img/icons/address.svg" />Endereço:</p>
+                <span data-item="address"></span>
+              </div>
+            </div>
+
+            <div class="skills">
+              <ul>
+                <li>
+                  <h2>Full-Stack</h2>
+                  <div class="progressBar">
+                    <div class="progress" style="width: 95%">
+                      <span>95%</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-
-          <div class="footer-right" data-animation="right">
-            <span>Últimos Cursos</span>
-            <div class="courses">
-
-              <a href="">
-                <div class="course">
-                  <div class="course-title">Administração<span class="course-hours">77 Horas</span></div>
-                  <div class="course-desc">Instituto Mix</div>
-                </div>
-              </a>
-
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
-    <div class="copyright">
-      Copyright © 2022 | design e desenvolvimento - Yago Russo
+
+    <div class="stacks">
+      <div class="section-body">
+        <div class="stack-display">
+          <div class="stack" data-stack="1"></div>
+          <div class="stack" data-stack="2"></div>
+          <div class="stack" data-stack="3"></div>
+          <div class="stack" data-stack="4"></div>
+          <div class="stack" data-stack="5"></div>
+          <div class="stack" data-stack="6"></div>
+        </div>
+
+        <div class="all-stacks-display">
+          <p>Todas as Tecnologias:</p>
+        </div>
+        <div class="stacks-chevron">
+          <span>Mais</span
+          ><img src="./src/img/icons/chevron.svg" alt="chevron" />
+        </div>
+      </div>
     </div>
-  </footer>
 
-  <script src="./src/js/data.js"></script>
-  <script src="./src/js/script.js"></script>
-</body>
+    <section class="portfolio">
+      <div class="section-body">
+        <h2 class="section-title">Portfolio</h2>
+        <p>Projetos feitos.</p>
+        <div class="portfolio-grid">
+          <div class="grid-item" data-animation="bottom">
+            <a href="" target="_blank">
+              <img src="./media/sites/skeleton.png" alt="Imagem" />
+            </a>
+            <div class="grid-item-container">
+              <div class="grid-item-title">
+                <p>Titulo1</p>
+                <div class="grid-item-stacks">
+                  <div class="grid-item-stack">
+                    <img src="./src/img/stacks/html5.svg" />
+                  </div>
+                  <div class="grid-item-stack">
+                    <img src="./src/img/stacks/css3.svg" />
+                  </div>
+                </div>
+              </div>
 
+              <div class="grid-item-desc">
+                Descrição do site - Descrição do site - Descrição do site -
+                Descrição do site - Descrição do site
+              </div>
+              <div class="grid-item-buttons">
+                <a href=""
+                  ><img src="./src/img/social/github.svg" alt="" />Código</a
+                >
+                <a href=""
+                  ><img src="./src/img/social/site.svg" alt="" />Site</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+    <footer>
+      <section class="footer">
+        <div class="section-body">
+          <div class="logo">
+            &lt;/&gt; Yago <span>Russo</span>
+            <div class="network"></div>
+          </div>
+
+          <div class="footer-email" data-animation="bottom">
+            <form>
+              <div class="form-line">
+                <input id="em-name" type="text" placeholder="Nome" />
+                <input id="em-email" type="email" placeholder="Email" />
+              </div>
+
+              <div class="form-line">
+                <input id="em-subject" type="text" placeholder="Assunto" />
+              </div>
+
+              <div class="form-line">
+                <textarea
+                  id="em-message"
+                  cols="30"
+                  rows="10"
+                  placeholder="Mensagem"
+                ></textarea>
+              </div>
+
+              <div class="form-line">
+                <button class="btn" onclick="sendEmail()" type="submit">
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="footer-infos">
+            <div class="footer-left" data-animation="left">
+              <div class="footer-contacts">
+                <div class="footer-contact">
+                  <img src="./src/img/icons/address.svg" alt="Address" />
+                  <span data-contact="address"></span>
+                </div>
+                <div class="footer-contact">
+                  <img src="./src/img/icons/phone.svg" alt="Phone" />
+                  <span data-contact="phone"></span>
+                </div>
+                <div class="footer-contact">
+                  <img src="./src/img/icons/email.svg" alt="Email" />
+                  <span data-contact="email"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-right" data-animation="right">
+              <span>Últimos Cursos</span>
+              <div class="courses">
+                <a href="">
+                  <div class="course">
+                    <div class="course-title">
+                      Administração<span class="course-hours">77 Horas</span>
+                    </div>
+                    <div class="course-desc">Instituto Mix</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="copyright">
+        Copyright © 2022 | design e desenvolvimento - Yago Russo
+        <span>última atualização: 24/09/2022</span>
+      </div>
+    </footer>
+
+    <script src="./src/js/data.js"></script>
+    <script src="./src/js/script.js"></script>
+  </body>
 </html>
